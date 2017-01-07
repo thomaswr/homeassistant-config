@@ -1,0 +1,1 @@
+- lastcommit: git -C ~/.homeassistant/ log --pretty=format:'%h %ad %s (%an)' --date=short  -n 1
