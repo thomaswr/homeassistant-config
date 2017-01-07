@@ -64,6 +64,7 @@ mqtt:
   username: !secret mqtt_user
   password: !secret mqtt_pass
 
+camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
 sensor: !include_dir_merge_list sensor/
 switch: !include_dir_merge_list switch/
