@@ -1,0 +1,19 @@
+sensor.latestcommit:
+  friendly_name: 'Letzter Commit'
+  icon: mdi:git
+  
+sensor.disk_use_home:
+  friendly_name: 'Storage-Auslastung'
+  icon: mdi:sd
+
+sensor.cpu_use:
+  friendly_name: 'CPU-Auslastung'
+  icon: mdi:chip
+  
+sensor.ram_free:
+  friendly_name: 'RAM frei'
+  icon: mdi:memory
+
+sensor.since_last_boot_templated:
+  friendly_name: 'Uptime'
+  icon: mdi:timetable
