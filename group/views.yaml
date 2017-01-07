@@ -1,0 +1,17 @@
+default_view:
+  view: yes
+  entities:
+    - device_tracker.thomas_nexus6p
+    - group.all_lights
+    - group.transmission
+    - group.weather
+    - group.lights
+    - media_player.chromie_audio
+
+monitor:
+  view: yes
+  icon: mdi:eye
+  entities:
+     - group.computers
+     - group.mediadevices
+     - group.networkdevices

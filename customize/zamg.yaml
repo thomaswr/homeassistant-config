@@ -1,0 +1,20 @@
+## Weather (ZAMG) ##
+####################
+sensor.zamg_temperature:
+  friendly_name: 'Aussentemperatur'
+  icon: mdi:temperature-celsius
+
+sensor.zamg_humidity:
+  friendly_name: 'Luftfeuchtigkeit'
+  icon: mdi:water-percent
+
+sensor.zamg_precipitation:
+  friendly_name: 'Niederschlag'
+  icon: mdi:weather-snowy-rainy
+
+sensor.zamg_wind_speed:
+  friendly_name: 'Wind'
+  icon: mdi:weather-windy
+
+sun.sun:
+  hidden: true

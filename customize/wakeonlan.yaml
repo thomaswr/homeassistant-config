@@ -1,0 +1,8 @@
+switch.wake_corei5:
+  friendly_name: 'Corei5 einschalten'
+
+switch.wake_htpc:
+  friendly_name: 'HTPC einschalten'
+
+switch.wake_server:
+  friendly_name: 'Server einschalten'

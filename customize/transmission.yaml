@@ -1,0 +1,15 @@
+## Transmission sensor ##
+#########################
+sensor.transmission_status:
+  friendly_name: 'Status'
+
+sensor.transmission_down_speed:
+  friendly_name: 'Download'
+  icon: mdi:download
+
+sensor.transmission_up_speed:
+  friendly_name: 'Upload'
+  icon: mdi:upload
+
+switch.transmission_turtle_mode:
+  friendly_name: 'Turtle Mode'

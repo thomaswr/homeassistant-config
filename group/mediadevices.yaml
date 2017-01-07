@@ -1,0 +1,7 @@
+mediadevices:
+  control: hidden
+  entities:
+    - sensor.sonystereo
+    - sensor.chromecastaudio
+    - sensor.wii
+

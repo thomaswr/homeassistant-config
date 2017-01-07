@@ -1,0 +1,5 @@
+- name: Fitnesscenter
+  latitude: ***REMOVED***
+  longitude: ***REMOVED***
+  radius: 50
+  icon: mdi:human-handsup

@@ -1,0 +1,6 @@
+weather:
+  entities:
+    - sensor.zamg_temperature
+    - sensor.zamg_humidity
+    - sensor.zamg_precipitation
+    - sensor.zamg_wind_speed

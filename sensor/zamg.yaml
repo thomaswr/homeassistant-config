@@ -1,0 +1,9 @@
+- platform: zamg
+  station_id: 11035
+  monitored_conditions:
+    - temperature
+    - humidity
+    - wind_speed
+    - precipitation
+
+

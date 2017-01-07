@@ -1,0 +1,45 @@
+- platform: template
+  sensors:
+    ddwrt:
+      friendly_name: 'ddwrt'
+      value_template: "{{ 'Online' if is_state('device_tracker.ddwrtlocal', 'home') else 'Offline' }}"
+    
+    googlewifi:
+      friendly_name: 'Google Wifi'
+      value_template: "{{ 'Online' if is_state('device_tracker.googlewifilocal', 'home') else 'Offline' }}"
+
+    philipshue:
+      friendly_name: 'Hue Bridge'
+      value_template: "{{ 'Online' if is_state('device_tracker.philipshuelocal', 'home') else 'Offline' }}"
+    
+    level1wifi:
+      friendly_name: 'Level1 Wifi'
+      value_template: "{{ 'Online' if is_state('device_tracker.level1wifilocal', 'home') else 'Offline' }}"
+    
+    server:
+      friendly_name: 'Server'
+      value_template: "{{ 'Online' if is_state('device_tracker.serverlocal', 'home') else 'Offline' }}"
+    
+    corei5:
+      friendly_name: 'Corei5'
+      value_template: "{{ 'Online' if is_state('device_tracker.corei5local', 'home') else 'Offline' }}"
+    
+    chromebook:
+      friendly_name: 'Chromebook'
+      value_template: "{{ 'Online' if is_state('device_tracker.chromebooklocal', 'home') else 'Offline' }}"
+    
+    htpc:
+      friendly_name: 'HTPC'
+      value_template: "{{ 'Online' if is_state('device_tracker.htpclocal', 'home') else 'Offline' }}"
+    
+    sonystereo:
+      friendly_name: 'Sony Stereo'
+      value_template: "{{ 'Online' if is_state('device_tracker.sonystereolocal', 'home') else 'Offline' }}"
+    
+    chromecastaudio:
+      friendly_name: 'Chromecast Audio'
+      value_template: "{{ 'Online' if is_state('device_tracker.chromecastaudiolocal', 'home') else 'Offline' }}"
+    
+    wii:
+      friendly_name: 'Nintendo Wii'
+      value_template: "{{ 'Online' if is_state('device_tracker.nintendowiilocal', 'home') else 'Offline' }}"

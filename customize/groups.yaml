@@ -1,0 +1,14 @@
+group.weather:
+  friendly_name: 'Wetter'
+
+group.lights:
+  friendly_name: 'Licht'
+
+group.computers:
+  friendly_name: 'Computer'
+
+group.mediadevices: 
+  friendly_name: 'Mediengeraete'
+
+group.networkdevices:
+  friendly_name: 'Netzwerk'
