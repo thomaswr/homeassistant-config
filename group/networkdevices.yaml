@@ -1,6 +1,7 @@
 networkdevices:
   control: hidden
   entities:
+    - camera.wangraph
     - sensor.ddwrt
     - sensor.googlewifi
     - sensor.philipshue
