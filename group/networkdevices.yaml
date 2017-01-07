@@ -5,6 +5,3 @@ networkdevices:
     - sensor.googlewifi
     - sensor.philipshue
     - sensor.level1wifi
-    - sensor.speedtest_ping
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
