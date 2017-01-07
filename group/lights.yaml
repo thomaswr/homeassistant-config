@@ -1,5 +1,5 @@
 lights:
-  control: hidden
+  #control: hidden
   entities:
     - light.vorzimmer
     - light.wohnzimmer
