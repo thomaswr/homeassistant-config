@@ -1,3 +1,0 @@
-- platform: generic
-  name: wangraph
-  still_image_url: http://server/cacti/graph_image.php?local_graph_id=20&rra_id=0&graph_height=120&graph_width=300
