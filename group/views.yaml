@@ -16,9 +16,7 @@ monitor:
      - group.computers
      - group.mediadevices
      - group.networkdevices
-     
 
-     
 system:
   view: yes
   icon: mdi:settings
