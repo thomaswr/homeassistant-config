@@ -6,3 +6,7 @@ light.vorzimmerlicht:
 
 light.wohnzimmerlicht:
   hidden: true
+  
+switch.edimax:
+  friendly_name: "TV Beleuchtung"
+  icon: mdi:lightbulb

@@ -3,4 +3,5 @@ lights:
   entities:
     - light.vorzimmer
     - light.wohnzimmer
+    - switch.edimax
     - light.schlafzimmer
