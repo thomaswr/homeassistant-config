@@ -15,10 +15,6 @@
     level1wifi:
       friendly_name: 'Level1 Wifi'
       value_template: "{{ 'Online' if is_state('device_tracker.level1wifilocal', 'home') else 'Offline' }}"
-      
-    upcmodem:
-      friendly_name: 'UPC Modem'
-      value_template: "{{ 'Online' if is_state('device_tracker.upcmodem', 'home') else 'Offline' }}"
     
     server:
       friendly_name: 'Server'

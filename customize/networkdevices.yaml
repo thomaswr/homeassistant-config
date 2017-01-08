@@ -21,8 +21,3 @@ sensor.philipshue:
   icon: mdi:router-wireless
 device_tracker.philipshuelocal:
   hidden: true
-  
-sensor.upcmodem:
-  icon: mdi:wan
-device_tracker.upcmodem:
-  hidden: true
