@@ -2,13 +2,13 @@ group.weather:
   friendly_name: 'Wetter'
 
 group.lights:
-  friendly_name: 'Licht'
+  friendly_name: 'Beleuchtung'
 
 group.computers:
   friendly_name: 'Computer'
 
 group.mediadevices: 
-  friendly_name: 'Mediengeraete'
+  friendly_name: 'Mediengeräte'
 
 group.networkdevices:
   friendly_name: 'Netzwerk'

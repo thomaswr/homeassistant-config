@@ -1,7 +1,7 @@
 ## Weather (ZAMG) ##
 ####################
 sensor.zamg_temperature:
-  friendly_name: 'Aussentemperatur'
+  friendly_name: 'Außentemperatur'
   icon: mdi:temperature-celsius
 
 sensor.zamg_humidity:
