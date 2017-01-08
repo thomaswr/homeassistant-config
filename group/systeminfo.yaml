@@ -1,6 +1,7 @@
 systeminfo:
   entities:
     - sensor.latestcommit
+    - sensor.pitemperature
     - sensor.disk_use_home
     - sensor.cpu_use
     - sensor.ram_free 
