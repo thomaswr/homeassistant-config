@@ -2,6 +2,7 @@
   name: wake_htpc
   host: htpc
   mac_address: '00-1f-d0-56-b7-0b'
+  turn_off: shell_command.turn_off_htpc
 
 - platform: wake_on_lan
   name: wake_corei5
