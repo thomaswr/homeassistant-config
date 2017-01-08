@@ -1,8 +1,11 @@
 switch.wake_corei5:
-  friendly_name: 'Corei5 einschalten'
+  icon: mdi:desktop-tower
+  friendly_name: 'Corei5'
 
 switch.wake_htpc:
-  friendly_name: 'HTPC einschalten'
+  icon: mdi:movie
+  friendly_name: 'HTPC'
 
 switch.wake_server:
-  friendly_name: 'Server einschalten'
+  icon: mdi:server
+  friendly_name: 'Server'

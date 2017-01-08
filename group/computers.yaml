@@ -1,10 +1,7 @@
 computers:
   control: hidden
   entities:
-    - sensor.server
     - switch.wake_server
-    - sensor.corei5
     - switch.wake_corei5
-    - sensor.htpc
     - switch.wake_htpc
     - sensor.chromebook
