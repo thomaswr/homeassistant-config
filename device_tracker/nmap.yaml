@@ -1,4 +1,4 @@
 - platform: nmap_tracker
   hosts: 10.70.0.1-99 192.168.100.1
   scan_options: " -PS135,445 -F --host-timeout 5s"
-  track_new_devices: no
+  track_new_devices: yes
