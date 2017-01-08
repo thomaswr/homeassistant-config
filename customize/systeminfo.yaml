@@ -2,6 +2,10 @@ sensor.latestcommit:
   friendly_name: 'Letzter Commit'
   icon: mdi:git
   
+sensor.pitemperature:
+  friendly_name: 'Temperatur'
+  icon: mdi:temperature-celsius
+  
 sensor.disk_use_home:
   friendly_name: 'Storage-Auslastung'
   icon: mdi:sd
