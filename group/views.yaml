@@ -14,7 +14,7 @@ persons:
 
 monitor:
   view: yes
-  icon: mdi:eye
+  icon: mdi:monitor-multiple
   entities:
      - group.computers
      - group.mediadevices
