@@ -44,6 +44,13 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    entities:
+      - sensor.since_last_boot
+      - sensor.since_last_boot_templated
+      - sensor.transmission_down_speed
+      - sensor.transmission_status
+      - sensor.transmission_up_speed
 
 # Track the sun
 sun:
