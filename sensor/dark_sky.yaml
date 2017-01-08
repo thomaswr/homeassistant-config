@@ -1,0 +1,9 @@
+- platform: darksky
+    api_key: !secret darksky_apikey
+    monitored_conditions:
+      - summary
+      - icon
+      - precip_type
+      - precip_intensity
+      - precip_probability
+      - cloud_cover
