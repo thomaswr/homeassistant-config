@@ -5,6 +5,6 @@ computers:
     - switch.wake_server
     - sensor.corei5
     - switch.wake_corei5
-    - sensor.chromebook
     - sensor.htpc
     - switch.wake_htpc
+    - sensor.chromebook

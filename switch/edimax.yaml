@@ -1,4 +1,4 @@
   - platform: edimax
-    name: edimaxswitch
+    name: edimax
     host: edimaxswitch
     password: !secret edimax_pass
