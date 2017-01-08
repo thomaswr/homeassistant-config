@@ -1,9 +1,8 @@
-- name: Living Room TV Time
+- name: TV Time
   entities:
     light.wohnzimmer:
       state: on
       transition: 5
-      color_name: 'Gold'
-      brightness: 125
+      profile: relax
     switch.edimax: 
       state: on
