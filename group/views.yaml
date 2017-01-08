@@ -1,12 +1,15 @@
 default_view:
   view: yes
   entities:
-    - device_tracker.thomas_nexus6p
-    - group.all_lights
-    - group.transmission
     - group.weather
     - group.lights
     - media_player.chromie_audio
+
+persons:
+  view: yes
+  icon: mdi:account-multiple
+  entities:
+    - device_tracker.thomas_nexus6p
     - camera.thomas
 
 monitor:
@@ -17,6 +20,12 @@ monitor:
      - group.mediadevices
      - group.networkdevices
 
+server:
+  view: yes
+  icon: mdi:server
+  entities:
+     - group.transmission
+
 system:
   view: yes
   icon: mdi:settings
@@ -26,3 +35,4 @@ system:
     - group.all_switches
     - group.all_automations
     - group.all_scripts
+
