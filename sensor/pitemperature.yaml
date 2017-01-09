@@ -1,4 +1,4 @@
 - platform: command_line
   name: pitemperature
-  command: /bin/bash -c "echo $(bc <<<"scale=2;$((`cat /sys/class/thermal/thermal_zone0/temp`))/1000")"
+  command: shell_command.get_pi_temperature
   unit_of_measurement: "°C"
