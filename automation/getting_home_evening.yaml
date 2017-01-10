@@ -1,4 +1,5 @@
 - alias: getting home evening
+  hide_entity: False
   trigger:
     - platform: state
       entity_id: device_tracker.thomas_nexus6p
