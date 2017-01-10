@@ -4,6 +4,7 @@ default_view:
     - group.weather
     - group.lights
     - media_player.chromie_audio
+    - group.all_scenes
 
 persons:
   view: yes

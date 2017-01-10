@@ -1,0 +1,7 @@
+all_scenes:
+  entities:
+    - scene.wohnzimmer_normal
+    - scene.wohnzimmer_tv_time
+    - scene.wohnzimmer_disco
+    - scene.schlafzimmer_normal
+    - scene.schlafzimmer_relax
