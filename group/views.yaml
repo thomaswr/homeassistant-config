@@ -21,12 +21,6 @@ monitor:
      - group.mediadevices
      - group.networkdevices
 
-automations:
-  view: yes
-  icon: mdi:robot
-  entities:
-    - group.automations
-
 server:
   view: yes
   icon: mdi:server
