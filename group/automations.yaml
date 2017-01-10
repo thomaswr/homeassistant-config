@@ -1,0 +1,3 @@
+automations:
+  entities:
+    - automation.getting_home_evening

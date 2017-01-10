@@ -1,4 +1,4 @@
-- alias: Wenn ich abends heimkomme
+- alias: getting home evening
   trigger:
     - platform: state
       entity_id: device_tracker.thomas_nexus6p
