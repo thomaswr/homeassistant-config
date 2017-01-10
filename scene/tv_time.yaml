@@ -1,8 +1,0 @@
-- name: TV Time
-  entities:
-    light.wohnzimmer:
-      state: on
-      transition: 5
-      profile: relax
-    switch.edimax: 
-      state: on

@@ -1,0 +1,34 @@
+#############################
+## Living room scenes
+#############################
+
+- name: Wohnzimmer normal
+  entities:
+    light.wohnzimmer:
+      state: on
+      transition: 5
+      profile: reading
+    switch.edimax:
+      state: off
+
+- name: Wohnzimmer TV Time
+  entities:
+    light.wohnzimmer:
+      state: on
+      transition: 5
+      profile: relax
+    switch.edimax: 
+      state: on
+    light.vorzimmer:
+      state: off
+      
+- name: Wohnzimmer Disco
+  entities:
+    light.wohnzimmer:
+      state: on
+      transition: 2
+      effect: colorloop
+    switch.edimax: 
+      state: off
+    light.vorzimmer:
+      state: off

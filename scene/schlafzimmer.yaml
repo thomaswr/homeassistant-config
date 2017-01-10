@@ -1,0 +1,17 @@
+#############################
+## Bed room scenes
+#############################
+
+- name: Schlafzimmer normal
+  entities:
+    light.schlafzimmer:
+      state: on
+      transition: 2
+      profile: reading
+
+- name: Schlafzimmer relax
+  entities:
+    light.schlafzimmer:
+      state: on
+      transition: 5
+      profile: relax
