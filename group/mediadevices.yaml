@@ -2,6 +2,7 @@ mediadevices:
   control: hidden
   entities:
     - sensor.sonystereo
+    - sensor.chromecast
     - sensor.chromecastaudio
     - sensor.wii
 

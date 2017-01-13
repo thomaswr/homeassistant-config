@@ -2,6 +2,11 @@
 ## Media devices
 #########################
 
+sensor.chromecast:
+  icon: mdi:cast
+device_tracker.chromecastlocal:
+  hidden: true
+
 sensor.chromecastaudio:
   icon: mdi:cast
 device_tracker.chromecastaudiolocal:

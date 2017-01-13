@@ -43,3 +43,7 @@
     wii:
       friendly_name: 'Nintendo Wii'
       value_template: "{{ 'Online' if is_state('device_tracker.nintendowiilocal', 'home') else 'Offline' }}"
+
+    chromecast:
+      friendly_name: 'Chromecast'
+      value_template: "{{ 'Online' if is_state('device_tracker.chromecastlocal', 'home') else 'Offline' }}"
