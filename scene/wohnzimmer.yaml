@@ -10,6 +10,13 @@
       profile: reading
     switch.edimax:
       state: off
+      
+- name: Wohnzimmer relax
+  entities:
+    light.wohnzimmer:
+      state: on
+      transition: 5
+      profile: relax
 
 - name: Wohnzimmer TV Time
   entities:
