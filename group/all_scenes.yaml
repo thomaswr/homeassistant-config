@@ -1,7 +1,11 @@
 all_scenes:
+  friendly_name: Szenen
   entities:
     - scene.wohnzimmer_normal
+    - scene.wohnzimmer_relax
     - scene.wohnzimmer_tv_time
     - scene.wohnzimmer_disco
     - scene.schlafzimmer_normal
     - scene.schlafzimmer_relax
+    - scene.schlafzimmer_romantisch
+    - scene.schlafzimmer_disco
