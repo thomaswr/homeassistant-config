@@ -1,5 +1,4 @@
 all_scenes:
-  friendly_name: Szenen
   entities:
     - scene.wohnzimmer_normal
     - scene.wohnzimmer_relax
