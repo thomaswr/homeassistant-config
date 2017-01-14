@@ -1,0 +1,14 @@
+- alias: relax in living room at night
+  hide_entity: False
+  trigger:
+    - platform: time
+      after: '22:00:00'
+
+  condition:
+    - condition: state
+      entity_id: light.wohnzimmer
+      state: 'on'
+
+  action:
+    - service: scene.turn_on
+      entity_id: scene.wohnzimmer_relax
