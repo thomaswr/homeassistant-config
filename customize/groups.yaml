@@ -13,5 +13,5 @@ group.mediadevices:
 group.networkdevices:
   friendly_name: 'Netzwerk'
 
-group.all_scenes
+group.all_scenes:
   friendly_name: 'Szenen'
