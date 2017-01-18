@@ -39,6 +39,9 @@ group: !include_dir_merge_named group
 # Define device tracker
 device_tracker: !include_dir_merge_list device_tracker
 
+logger:
+  default: error
+
 # Enables support for tracking state changes over time.
 history:
 
@@ -49,6 +52,11 @@ recorder:
 logbook:
   exclude:
     entities:
+      - sensor.latestcommit
+      - sensor.pitemperature
+      - sensor.disk_use_home
+      - sensor.cpu_use
+      - sensor.ram_free 
       - sensor.since_last_boot
       - sensor.since_last_boot_templated
       - sensor.transmission_down_speed
