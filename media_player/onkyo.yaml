@@ -1,0 +1,5 @@
+platform: onkyo
+host: onkyo
+sources:
+    bd-dvd: 'Kodi'
+    

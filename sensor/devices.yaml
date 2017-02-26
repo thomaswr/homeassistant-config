@@ -47,3 +47,7 @@
     chromecast:
       friendly_name: 'Chromecast'
       value_template: "{{ 'Online' if is_state('device_tracker.chromecastlocal', 'home') else 'Offline' }}"
+      
+    onkyo:
+      friendly_name: 'Onkyo Receiver'
+      value_template: "{{ 'Online' if is_state('device_tracker.onkyolocal', 'home') else 'Offline' }}"
