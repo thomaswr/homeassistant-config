@@ -21,3 +21,9 @@ sensor.wii:
   icon: mdi:gamepad-variant
 device_tracker.nintendowiilocal:
   hidden: true
+  
+sensor.onkyo:
+  icon: mdi:speaker
+device_tracker.onkyolocal:
+  hidden: true
+
