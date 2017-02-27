@@ -5,6 +5,7 @@ default_view:
     - group.lights
     - media_player.chromie_audio
     - media_player.chromie
+    - media_player.onkyo
     - group.all_scenes
 
 persons:
