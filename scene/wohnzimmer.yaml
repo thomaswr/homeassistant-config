@@ -28,6 +28,10 @@
       state: on
     light.vorzimmer:
       state: off
+    media_player.onkyo:
+      state: on
+    media_player.chromie_audio:
+      state: paused
       
 - name: Wohnzimmer Disco
   entities:
