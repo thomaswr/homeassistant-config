@@ -1,5 +1,3 @@
-platform: onkyo
-host: onkyo
-sources:
-    bd-dvd: 'Kodi'
-    
+- platform: onkyo
+  host: onkyo
+  name: onkyo
