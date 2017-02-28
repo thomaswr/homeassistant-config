@@ -28,7 +28,7 @@
       state: on
     light.vorzimmer:
       state: off
-    media_player.onkyo:
+    media_player.onkyo_receiver:
       state: on
     media_player.chromie_audio:
       state: paused
