@@ -1,0 +1,10 @@
+- alias: switch on onkyo with kodi
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      state: on
+
+  action:
+    - service: media_player.turn_on
+      entity_id: media_player.onkyo

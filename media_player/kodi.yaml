@@ -1,6 +1,5 @@
-# platform: kodi
-# host: htpc
-# port: 80
-# username: !secret kodi_user
-# password: !secret kodi_pass
-# turn_off_action: suspend
+- platform: kodi
+  host: htpc
+  port: 80
+  username: !secret kodi_user
+  password: !secret kodi_pass
