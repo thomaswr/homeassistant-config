@@ -3,7 +3,8 @@
   trigger:
     - platform: state
       entity_id: media_player.kodi
-      state: 'on'
+      to: 'idle'
+      from: 'off'
 
   action:
     - service: media_player.turn_on
