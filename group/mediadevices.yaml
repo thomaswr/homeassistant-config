@@ -1,7 +1,7 @@
 mediadevices:
   control: hidden
   entities:
-    - sensor.onkyo
+    - sensor.switch_onkyo
     - sensor.sonystereo
     - sensor.chromecast
     - sensor.chromecastaudio
