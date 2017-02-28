@@ -22,7 +22,8 @@ sensor.wii:
 device_tracker.nintendowiilocal:
   hidden: true
   
-sensor.onkyo:
+switch.onkyo:
+  friendly_name: 'Onkyo Receiver'
   icon: mdi:speaker
 device_tracker.onkyolocal:
   hidden: true
