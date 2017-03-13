@@ -47,3 +47,7 @@
     chromecast:
       friendly_name: 'Chromecast'
       value_template: "{{ 'Online' if is_state('device_tracker.chromecastlocal', 'home') else 'Offline' }}"
+      
+    nintendoswitch:
+      friendly_name: 'Nintendo Switch'
+      value_template: "{{ 'Online' if is_state('device_tracker.nintendoswitchlocal', 'home') else 'Offline' }}"

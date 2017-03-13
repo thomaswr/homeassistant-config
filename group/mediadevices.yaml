@@ -6,4 +6,5 @@ mediadevices:
     - sensor.chromecast
     - sensor.chromecastaudio
     - sensor.wii
+    - sensor.nintendoswitch
 

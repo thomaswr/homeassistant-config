@@ -28,3 +28,7 @@ switch.onkyo:
 device_tracker.onkyolocal:
   hidden: true
 
+sensor.nintendoswitch:
+  icon: mdi:gamepad-variant
+device_tracker.nintendoswitchlocal:
+  hidden: true
