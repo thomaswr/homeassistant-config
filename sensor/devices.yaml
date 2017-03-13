@@ -51,3 +51,7 @@
     nintendoswitch:
       friendly_name: 'Nintendo Switch'
       value_template: "{{ 'Online' if is_state('device_tracker.nintendoswitchlocal', 'home') else 'Offline' }}"
+      
+    echodot:
+      friendly_name: 'Echo Dot'
+      value_template: "{{ 'Online' if is_state('device_tracker.echodotlocal', 'home') else 'Offline' }}"

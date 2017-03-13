@@ -5,3 +5,4 @@ networkdevices:
     - sensor.googlewifi
     - sensor.philipshue
     - sensor.level1wifi
+    - sensor.echodot

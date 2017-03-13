@@ -21,3 +21,8 @@ sensor.philipshue:
   icon: mdi:router-wireless
 device_tracker.philipshuelocal:
   hidden: true
+  
+sensor.echodot:
+  icon: mdi:cloud
+device_tracker.echodotlocal:
+  hidden: true
