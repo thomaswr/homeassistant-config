@@ -25,6 +25,7 @@ device_tracker.nintendowiilocal:
 switch.onkyo:
   friendly_name: 'Onkyo Receiver'
   icon: mdi:speaker
+  emulated_hue: true
 device_tracker.onkyolocal:
   hidden: true
 

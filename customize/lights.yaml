@@ -10,3 +10,4 @@ light.wohnzimmerlicht:
 switch.edimax:
   friendly_name: "TV Beleuchtung"
   icon: mdi:lightbulb
+  emulated_hue: true

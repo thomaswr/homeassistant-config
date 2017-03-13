@@ -4,6 +4,7 @@
 
 sensor.htpc:
   icon: mdi:movie
+  emulated_hue: true
 device_tracker.htpclocal:
   hidden: true
 
