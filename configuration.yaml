@@ -92,7 +92,7 @@ ifttt:
   
 android_ip_webcam:
   - host: nexus7cam
-    name: Wohnzimmer
+    name: nexus7cam
     username: !secret cam_user
     password: !secret cam_pass
 
