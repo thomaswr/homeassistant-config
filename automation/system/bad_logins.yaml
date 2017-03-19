@@ -11,4 +11,4 @@
   action:
     service: script.ifttt_notify
     data_template:
-      value1: 'Login fehlgeschlagen!'
+      value1: 'Home Assistant: Login fehlgeschlagen!'
