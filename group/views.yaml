@@ -14,6 +14,7 @@ persons:
   entities:
     - device_tracker.thomas_nexus6p
     - camera.thomas
+    - camera.nexus7cam
 
 monitor:
   view: yes
