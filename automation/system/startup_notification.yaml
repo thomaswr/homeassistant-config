@@ -1,0 +1,15 @@
+###################################
+##  Start Up Section
+###################################
+
+- alias: Startup Notification
+  hide_entity: True
+  trigger:
+    - platform: event
+      event_type: homeassistant_start
+  action:
+    - service: script.ifttt_notify
+      data_template:
+        value1: 'Home Assistant gestartet'
+        value2: ''
+        value3: ''
