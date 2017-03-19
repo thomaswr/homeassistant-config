@@ -1,6 +1,6 @@
 weather:
   entities:
-    - sensor.zamg_temperature
+    - sensor.dark_sky_temperature
     - sensor.zamg_humidity
-    - sensor.zamg_precipitation
+    - sensor.dark_sky_precip_probability
     - sensor.zamg_wind_speed

@@ -7,3 +7,5 @@
     - precip_intensity
     - precip_probability
     - cloud_cover
+    - temperature
+    - apparent_temperature
