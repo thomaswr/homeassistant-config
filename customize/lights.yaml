@@ -1,13 +1,20 @@
 light.schlafzimmerlicht:
   hidden: true
+  emulated_hue: true
+  emulated_hue_name: "Schlafzimmerlicht"
 
 light.vorzimmerlicht:
   hidden: true
+  emulated_hue: true
+  emulated_hue_name: "Eingangslicht"
 
 light.wohnzimmerlicht:
   hidden: true
+  emulated_hue: true
+  emulated_hue_name: "Wohnzimmerlicht"
   
 switch.edimax:
   friendly_name: "TV Beleuchtung"
   icon: mdi:lightbulb
   emulated_hue: true
+  emulated_hue_name: "Fernsehlicht"

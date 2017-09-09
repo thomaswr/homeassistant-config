@@ -5,6 +5,7 @@
 sensor.htpc:
   icon: mdi:movie
   emulated_hue: true
+  emulated_hue_name: "Kodi"
 device_tracker.htpclocal:
   hidden: true
 
