@@ -5,8 +5,9 @@
 - alias: Startup Notification
   hide_entity: True
   trigger:
-    - platform: event
-      event_type: homeassistant_start
+    - platform: homeassistant
+      # Event can also be 'shutdown'
+      event: start
   action:
     - service: script.ifttt_notify
       data_template:
