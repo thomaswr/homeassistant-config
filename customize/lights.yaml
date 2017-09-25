@@ -1,17 +1,14 @@
 light.schlafzimmerlicht:
   hidden: true
-  emulated_hue: true
-  emulated_hue_name: "Schlafzimmerlicht"
+  emulated_hue: false
 
 light.vorzimmerlicht:
   hidden: true
-  emulated_hue: true
-  emulated_hue_name: "Eingangslicht"
+  emulated_hue: false
 
 light.wohnzimmerlicht:
   hidden: true
-  emulated_hue: true
-  emulated_hue_name: "Wohnzimmerlicht"
+  emulated_hue: false
   
 switch.edimax:
   friendly_name: "TV Beleuchtung"
