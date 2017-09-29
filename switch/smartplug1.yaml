@@ -1,0 +1,3 @@
+  - platform: tplink
+    name: smartplug1
+    host: smartplug1
