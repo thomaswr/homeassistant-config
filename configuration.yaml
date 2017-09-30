@@ -39,7 +39,7 @@ conversation:
 group: !include_dir_merge_named group
 
 # Define device tracker
-device_tracker: !include_dir_merge_list device_tracker
+device_tracker: !include device_tracker.yaml
 
 logger:
   default: error
