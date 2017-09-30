@@ -11,5 +11,5 @@
     - service: script.ifttt_notify
       data_template:
         value1: 'Neues Gerät verbunden'
-        value2: {{trigger.event.data.host_name}}
-        value3: {{trigger.event.data.entity_id}}
+        value2: '{{trigger.event.data.host_name}}'
+        value3: '{{trigger.event.data.entity_id}}'
