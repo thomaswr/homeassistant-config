@@ -30,7 +30,7 @@
     light.wohnzimmer:
       state: off
       transition: 60
-    switch.edimax:
+    switch.smartplug1:
       state: off
 
 - name: Schlafzimmer Disco

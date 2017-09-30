@@ -10,7 +10,7 @@ light.wohnzimmerlicht:
   hidden: true
   emulated_hue: false
   
-switch.edimax:
+switch.smartplug1:
   friendly_name: "TV Beleuchtung"
   icon: mdi:lightbulb
   emulated_hue: true

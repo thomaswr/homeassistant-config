@@ -8,7 +8,7 @@
       state: on
       transition: 5
       profile: reading
-    switch.edimax:
+    switch.smartplug1:
       state: off
       
 - name: Wohnzimmer relax
@@ -24,7 +24,7 @@
       state: on
       transition: 5
       profile: relax
-    switch.edimax: 
+    switch.smartplug1: 
       state: on
     light.vorzimmer:
       state: off
@@ -39,7 +39,7 @@
       state: on
       transition: 2
       effect: colorloop
-    switch.edimax: 
+    switch.smartplug1: 
       state: off
     light.vorzimmer:
       state: off
