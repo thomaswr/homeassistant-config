@@ -1,1 +1,10 @@
 - platform: template
+  switches:
+    tvon:
+      value_template: "{{is_state('media_player.onkyo', 'on') and is_state('sensor.htpc', 'Online')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.turn_on_tv
+      turn_off:
+        service: script.turn_on
+        entity_id: script.turn_off_tv
