@@ -10,8 +10,8 @@
     # IFTTT Maker channel should look like this: https://files.gitter.im/home-assistant/home-assistant/phkx/blob
 ######################################################################################################
 
-- ifttt_notify:
-    sequence:
-      - service: ifttt.trigger
-        data_template: {"event":"ifttt_notify", "value1":"{{ value1 }}", "value2":"{{ value2 }}", "value3":"{{ value3 }}"}
-        
+ifttt_notify:
+  sequence:
+    - service: ifttt.trigger
+      data_template: {"event":"ifttt_notify", "value1":"{{ value1 }}", "value2":"{{ value2 }}", "value3":"{{ value3 }}"}
+      

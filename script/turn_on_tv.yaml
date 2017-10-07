@@ -1,26 +1,26 @@
-- turn_on_tv:
-    sequence:
-      # Turn on Receiver
-      - service: switch.turn_on
-        data:
-          entity_id: switch.onkyo
-        
-      # Wait 5 secs to warm up
-      - delay: '00:00:05'
+turn_on_tv:
+  sequence:
+    # Turn on Receiver
+    - service: switch.turn_on
+      data:
+        entity_id: switch.onkyo
       
-      # Turn on Kodi
-      - service: switch.turn_on
-        data:
-          entity_id: switch.wake_htpc      
+    # Wait 5 secs to warm up
+    - delay: '00:00:05'
+    
+    # Turn on Kodi
+    - service: switch.turn_on
+      data:
+        entity_id: switch.wake_htpc      
+    
+    # If it's after dark, resume...
+    - condition:
+        condition: sun
+        after: sunset
+        # Optional offset value
+        after_offset: "-1:00:00"
       
-      # If it's after dark, resume...
-      - condition:
-          condition: sun
-          after: sunset
-          # Optional offset value
-          after_offset: "-1:00:00"
-        
-      # Turn on Tv time lighting scene
-      - service: scene.turn_on
-        data:
-          entity_id: scene.wohnzimmer_tv_time
+    # Turn on Tv time lighting scene
+    - service: scene.turn_on
+      data:
+        entity_id: scene.wohnzimmer_tv_time
