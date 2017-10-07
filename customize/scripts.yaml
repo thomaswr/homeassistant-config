@@ -1,4 +1,0 @@
-script.turn_on_tv:
-  icon: mdi:television
-  emulated_hue: true
-  emulated_hue_name: "Fernseher"

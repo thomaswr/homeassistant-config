@@ -28,6 +28,12 @@ switch.onkyo:
   emulated_hue: true
 device_tracker.onkyolocal:
   hidden: true
+  
+switch.tvon:
+  friendly_name: "Fernseher"
+  emulated_hue: true
+  emulated_hue_name: "Fernseher"
+  icon: mdi:television
 
 sensor.nintendoswitch:
   icon: mdi:gamepad-variant
