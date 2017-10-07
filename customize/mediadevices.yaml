@@ -29,13 +29,20 @@ switch.onkyo:
 device_tracker.onkyolocal:
   hidden: true
   
+sensor.nintendoswitch:
+  icon: mdi:gamepad-variant
+device_tracker.nintendoswitchlocal:
+  hidden: true
+
+# Device Operations
 switch.tvon:
   friendly_name: "Fernseher"
   emulated_hue: true
   emulated_hue_name: "Fernseher"
   icon: mdi:television
-
-sensor.nintendoswitch:
-  icon: mdi:gamepad-variant
-device_tracker.nintendoswitchlocal:
-  hidden: true
+  
+switch.kodi_pause:
+  friendly_name: "Pausiere Kodi"
+  emulated_hue: true
+  emulated_hue_name: "Pause"
+  icon: mdi:television

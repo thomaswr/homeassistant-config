@@ -1,0 +1,12 @@
+- platform: template
+  switches:
+    kodi_pause:
+      value_template: "{{not is_state('media_player.onkyo', 'off') and not is_state('media_player.kodi', 'off')}}"
+      turn_on:
+        service: media_player.kodi_call_method
+        entity_id: media_player.kodi
+        method: Player.PlayPause
+      turn_off:
+        service: media_player.kodi_call_method
+        entity_id: media_player.kodi
+        method: Player.PlayPause
