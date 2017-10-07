@@ -2,16 +2,14 @@ turn_on_tv:
   sequence:
     # Turn on Receiver
     - service: switch.turn_on
-      data:
-        entity_id: switch.onkyo
+      entity_id: switch.onkyo
       
     # Wait 5 secs to warm up
     - delay: '00:00:05'
     
     # Turn on Kodi
     - service: switch.turn_on
-      data:
-        entity_id: switch.wake_htpc      
+      entity_id: switch.wake_htpc      
     
     # If it's after dark, resume...
     - condition:
@@ -22,5 +20,4 @@ turn_on_tv:
       
     # Turn on Tv time lighting scene
     - service: scene.turn_on
-      data:
-        entity_id: scene.wohnzimmer_tv_time
+      entity_id: scene.wohnzimmer_tv_time
