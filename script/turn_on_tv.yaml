@@ -1,11 +1,19 @@
 turn_on_tv:
+  emulated_hue: true
+  emulated_hue_name: "Fernseher"
+  
   sequence:
     # Turn on Receiver
     - service: switch.turn_on
       entity_id: switch.onkyo
+    # Switch to Kodi source
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.onkyo
+        source: Bluray
       
-    # Wait 5 secs to warm up
-    - delay: '00:00:05'
+    # Wait 3 secs to warm up
+    - delay: '00:00:03'
     
     # Turn on Kodi
     - service: switch.turn_on
