@@ -32,8 +32,8 @@ turn_off_tv:
     - service: switch.turn_off
       entity_id: switch.wake_htpc  
       
-    # Wait 2 secs
-    - delay: '00:00:02'
+    # Wait 5 secs
+    - delay: '00:00:05'
       
     # Turn off Receiver
     - service: switch.turn_off
