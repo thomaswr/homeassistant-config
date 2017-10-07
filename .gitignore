@@ -7,3 +7,4 @@ secrets.yaml
 home-assistant*.log
 home-assistant*.db
 secrets.yaml
+projectfile
