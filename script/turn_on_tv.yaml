@@ -1,7 +1,4 @@
 turn_on_tv:
-  emulated_hue: true
-  emulated_hue_name: "Fernseher"
-  
   sequence:
     # Turn on Receiver
     - service: switch.turn_on
