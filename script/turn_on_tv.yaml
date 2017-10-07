@@ -6,9 +6,7 @@
           entity_id: switch.onkyo
         
       # Wait 5 secs to warm up
-      - delay:
-      # supports seconds, milliseconds, minutes, hours
-        seconds: 5
+      - delay: '00:00:05'
       
       # Turn on Kodi
       - service: switch.turn_on
