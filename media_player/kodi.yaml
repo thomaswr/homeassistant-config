@@ -7,7 +7,7 @@
   turn_on_action:
   - service: wake_on_lan.send_magic_packet
     data:
-      mac: 00:1f:d0:56:b7:0b
+      mac: '00:1f:d0:56:b7:0b'
       
   turn_off_action:
   - service: media_player.kodi_call_method
