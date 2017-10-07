@@ -9,8 +9,8 @@ turn_on_tv:
         entity_id: media_player.onkyo
         source: Bluray
       
-    # Wait 3 secs to warm up
-    - delay: '00:00:03'
+    # Wait 2 secs to warm up
+    - delay: '00:00:02'
     
     # Turn on Kodi
     - service: switch.turn_on
@@ -25,3 +25,20 @@ turn_on_tv:
     # Turn on Tv time lighting scene
     - service: scene.turn_on
       entity_id: scene.wohnzimmer_tv_time
+      
+turn_off_tv:
+  sequence:
+    # Turn off Kodi
+    - service: switch.turn_off
+      entity_id: switch.wake_htpc  
+      
+    # Wait 2 secs
+    - delay: '00:00:02'
+      
+    # Turn off Receiver
+    - service: switch.turn_off
+      entity_id: switch.onkyo
+    
+    # Turn off Tv light
+    - service: switch.turn_off
+      entity_id: switch.smartplug1

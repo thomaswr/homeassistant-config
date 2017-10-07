@@ -1,0 +1,17 @@
+- alias: 'Fernseher ein'
+  trigger:
+    platform: state
+    entity_id: switch.tvon
+    state: 'on'
+  action:
+    service: script.turn_on_tv
+    entity_id: script.tv_ON
+
+- alias: 'Fernseher aus'
+  trigger:
+    platform: state
+    entity_id: switch.tvon
+    state: 'off'
+  action:
+    service: script.turn_on
+    entity_id: script.tv_off_tv
