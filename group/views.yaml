@@ -14,6 +14,7 @@ persons:
   icon: mdi:account-multiple
   entities:
     - device_tracker.thomas_nexus6p
+    - device_tracker.p8lite
     - camera.thomas
     - camera.nexus7cam
 
