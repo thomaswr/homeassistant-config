@@ -44,5 +44,5 @@ switch.tvon:
 switch.kodi_pause:
   friendly_name: "Pausiere Kodi"
   emulated_hue: true
-  emulated_hue_name: "Wiedergabe"
+  emulated_hue_name: "Kodi auf Pause"
   icon: mdi:television
