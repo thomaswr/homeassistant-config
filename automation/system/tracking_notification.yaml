@@ -1,0 +1,12 @@
+- alias: "Tracking Notification"
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.p8lite
+
+  action:
+    - service: script.ifttt_notify
+      data_template:
+        value1: 'Martina ist {{ states('device_tracker.p8lite') }}'
+        value2: ''
+        value3: ''  
