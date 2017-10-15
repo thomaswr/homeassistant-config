@@ -1,5 +1,7 @@
 - platform: nmap_tracker
   hosts: 10.70.0.32-120,1-29
-  scan_options: " -PS135,445 -sP --host-timeout 5s"
+  scan_options: " -PS135,445 -sP --host-timeout 5s --max-rate 100 "
+  home_interval: 10
   track_new_devices: yes
+  consider_home: 00:05:00
   

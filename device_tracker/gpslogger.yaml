@@ -1,1 +1,2 @@
 - platform: gpslogger
+  consider_home: 00:05:00
