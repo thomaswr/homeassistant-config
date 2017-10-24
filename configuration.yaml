@@ -86,12 +86,6 @@ tts:
   platform: google
   language: 'en'
 
-mqtt:
-  broker: !secret mqtt_host
-  port: 22223
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
-
 emulated_hue:
   expose_by_default: false
   exposed_domains:
