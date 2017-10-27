@@ -76,6 +76,9 @@ logbook:
 # Track the sun
 sun:
 
+# Show map in UI
+map:
+
 # Light control
 light:
   platform: hue
