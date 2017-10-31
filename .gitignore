@@ -8,3 +8,4 @@ home-assistant*.log
 home-assistant*.db
 secrets.yaml
 workspace
+phue.conf
