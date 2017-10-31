@@ -1,4 +1,4 @@
 - name: Work
-  latitude: ***REMOVED***
-  longitude: ***REMOVED***
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
   icon: mdi:briefcase

@@ -1,5 +1,5 @@
 - name: Fitnesscenter
-  latitude: ***REMOVED***
-  longitude: ***REMOVED***
+  latitude: !secret fitnesscenter_latitude
+  longitude: !secret fitnesscenter_longitude
   radius: 50
   icon: mdi:human-handsup
