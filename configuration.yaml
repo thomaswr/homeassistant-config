@@ -21,11 +21,9 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_pass
-  ssl_certificate: ***REMOVED***
-  ssl_key: ***REMOVED***
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
-
+  ssl_certificate: !secret_tls_cert
+  ssl_key: !secret_tls_key
+  
 # Checks for available updates
 updater:
 
@@ -96,12 +94,6 @@ emulated_hue:
   
 ifttt:
   key: !secret ifttt_key
-  
-#android_ip_webcam:
-#  - host: nexus7cam
-#    name: nexus7cam
-#    username: !secret cam_user
-#    password: !secret cam_pass
 
 # enable wake on lan
 wake_on_lan:
