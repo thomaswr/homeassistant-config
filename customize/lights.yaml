@@ -10,8 +10,8 @@ light.wohnzimmerlicht:
   hidden: true
   emulated_hue: false
   
- light.regallicht:
-   emulated_hue: false
+light.regallicht:
+  emulated_hue: false
   
 switch.smartplug1:
   friendly_name: "TV Beleuchtung"
