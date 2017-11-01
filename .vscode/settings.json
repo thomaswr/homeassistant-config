@@ -1,4 +1,5 @@
 {
     "travis.repository": "homeassistant-config",
-    "travis.username": "thomaswr"
+    "travis.username": "thomaswr",
+    "editor.renderWhitespace": "boundary"
 }
