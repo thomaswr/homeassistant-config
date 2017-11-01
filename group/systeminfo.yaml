@@ -1,6 +1,6 @@
 systeminfo:
   entities:
-    - sensor.travis_status
+    - binary_sensor.travis_status
     - script.update_config
     - sensor.latestcommit
     - sensor.pitemperature

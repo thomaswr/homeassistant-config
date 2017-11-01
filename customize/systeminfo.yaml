@@ -1,4 +1,4 @@
-sensor.travis_status:
+binary_sensor.travis_status:
   friendly_name: 'Build Status'
   icon: mdi:check-circle-outline
 
