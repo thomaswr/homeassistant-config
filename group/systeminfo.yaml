@@ -1,5 +1,7 @@
 systeminfo:
   entities:
+    - sensor.travis_status
+    - script.update_config
     - sensor.latestcommit
     - sensor.pitemperature
     - sensor.disk_use_home
