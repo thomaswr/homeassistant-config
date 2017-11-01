@@ -4,7 +4,7 @@ systeminfo:
     - script.update_config
     - sensor.latestcommit
     - sensor.pitemperature
-    - sensor.disk_use_home
-    - sensor.cpu_use
-    - sensor.ram_free 
+    - sensor.disk_used_home
+    - sensor.cpu_used
+    - sensor.ram_available 
     - sensor.since_last_boot_templated

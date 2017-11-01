@@ -1,3 +1,11 @@
+sensor.travis_status:
+  friendly_name: 'Build Status'
+  icon: mdi:check-circle-outline
+
+script.update_config:
+  friendly_name: 'Update Config'
+  icon: mdi:update
+
 sensor.latestcommit:
   friendly_name: 'Letzter Commit'
   icon: mdi:git
@@ -6,15 +14,15 @@ sensor.pitemperature:
   friendly_name: 'Temperatur'
   icon: mdi:temperature-celsius
   
-sensor.disk_use_home:
+sensor.disk_used_home:
   friendly_name: 'Storage-Auslastung'
   icon: mdi:sd
 
-sensor.cpu_use:
+sensor.cpu_used:
   friendly_name: 'CPU-Auslastung'
   icon: mdi:chip
   
-sensor.ram_free:
+sensor.ram_available:
   friendly_name: 'RAM frei'
   icon: mdi:memory
 
