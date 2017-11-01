@@ -1,5 +1,6 @@
 {
     "travis.repository": "homeassistant-config",
     "travis.username": "thomaswr",
-    "editor.renderWhitespace": "boundary"
+    "editor.renderWhitespace": "boundary",
+    "files.eol": "\n"
 }
