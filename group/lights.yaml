@@ -2,7 +2,7 @@ lights:
   #control: hidden
   entities:
     - light.vorzimmer
-    - light.wohnzimmer
+    - light.wohnzimmerlicht
     - light.regallicht
     - switch.smartplug1
     - light.schlafzimmer
