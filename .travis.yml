@@ -8,3 +8,5 @@ script:
 before_install:
   - mv travis_secrets.yaml secrets.yaml
   - touch travis_cert_fakefile
+notifications:
+  email: false
