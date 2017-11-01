@@ -1,0 +1,16 @@
+- alias: switch receiver source on chromecast playing
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.chromie
+      to: 'playing'
+
+  action:
+    # Turn on Receiver
+    - service: switch.turn_on
+      entity_id: switch.onkyo
+    # Switch to Kodi source
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.onkyo
+        source: strm-box
