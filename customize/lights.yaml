@@ -7,7 +7,7 @@ light.vorzimmerlicht:
   emulated_hue: false
 
 light.wohnzimmerlicht:
-  hidden: true
+  hidden: false
   emulated_hue: false
   
 light.regallicht:
