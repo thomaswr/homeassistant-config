@@ -80,7 +80,7 @@ map:
 # Light control
 light:
   platform: hue
-  host: philipshue
+  host: 10.70.0.3
 
 # Text to speech
 tts:
