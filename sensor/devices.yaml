@@ -2,56 +2,56 @@
   sensors:
     ddwrt:
       friendly_name: 'Router (ddwrt)'
-      value_template: "{{ 'Online' if is_state('device_tracker.ddwrtlocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.ddwrt', 'home') else 'Offline' }}"
     
     googlewifi:
       friendly_name: 'Google Wifi'
-      value_template: "{{ 'Online' if is_state('device_tracker.googlewifilocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.googlewifi', 'home') else 'Offline' }}"
 
     philipshue:
       friendly_name: 'Hue Bridge'
-      value_template: "{{ 'Online' if is_state('device_tracker.philipshuelocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.philipshue', 'home') else 'Offline' }}"
     
     level1wifi:
       friendly_name: 'Level1 Wifi'
-      value_template: "{{ 'Online' if is_state('device_tracker.level1wifilocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.level1wifi', 'home') else 'Offline' }}"
     
     server:
       friendly_name: 'Server'
-      value_template: "{{ 'Online' if is_state('device_tracker.serverlocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.server', 'home') else 'Offline' }}"
     
     corei5:
       friendly_name: 'Corei5'
-      value_template: "{{ 'Online' if is_state('device_tracker.corei5local', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.corei5', 'home') else 'Offline' }}"
     
     chromebook:
       friendly_name: 'Chromebook'
-      value_template: "{{ 'Online' if is_state('device_tracker.chromebooklocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.chromebook', 'home') else 'Offline' }}"
     
     htpc:
       friendly_name: 'HTPC'
-      value_template: "{{ 'Online' if is_state('device_tracker.htpclocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.htpc', 'home') else 'Offline' }}"
     
     sonystereo:
       friendly_name: 'Sony Stereo'
-      value_template: "{{ 'Online' if is_state('device_tracker.sonystereolocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.sonystereo', 'home') else 'Offline' }}"
     
     chromecastaudio:
       friendly_name: 'Chromecast Audio'
-      value_template: "{{ 'Online' if is_state('device_tracker.chromecastaudiolocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.chromecastaudio', 'home') else 'Offline' }}"
     
     wii:
       friendly_name: 'Nintendo Wii'
-      value_template: "{{ 'Online' if is_state('device_tracker.nintendowiilocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.nintendowii', 'home') else 'Offline' }}"
 
     chromecast:
       friendly_name: 'Chromecast'
-      value_template: "{{ 'Online' if is_state('device_tracker.chromecastlocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"
       
     nintendoswitch:
       friendly_name: 'Nintendo Switch'
-      value_template: "{{ 'Online' if is_state('device_tracker.nintendoswitchlocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.nintendoswitch', 'home') else 'Offline' }}"
       
     echodot:
       friendly_name: 'Echo Dot'
-      value_template: "{{ 'Online' if is_state('device_tracker.echodotlocal', 'home') else 'Offline' }}"
+      value_template: "{{ 'Online' if is_state('device_tracker.echodot', 'home') else 'Offline' }}"
