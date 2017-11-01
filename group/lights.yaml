@@ -3,5 +3,6 @@ lights:
   entities:
     - light.vorzimmer
     - light.wohnzimmer
+    - light.regallicht
     - switch.smartplug1
     - light.schlafzimmer
