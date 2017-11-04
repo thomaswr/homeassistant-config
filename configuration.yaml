@@ -30,7 +30,7 @@ updater:
 # Discover some devices automatically
 discovery:
   ignore:
-   - google_cast
+   #- google_cast
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
