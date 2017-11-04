@@ -19,7 +19,7 @@ homeassistant:
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
+  base_url: !secret http_baseurl
   api_password: !secret api_pass
   ssl_certificate: !secret tls_cert
   ssl_key: !secret tls_key
