@@ -1,0 +1,9 @@
+guest_mode:
+  name: Gastmodus
+  icon: mdi:sofa
+  initial: off
+
+vacation_mode:
+  name: Urlaubsmodus
+  icon: mdi:wallet-travel
+  initial: off

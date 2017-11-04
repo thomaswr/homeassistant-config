@@ -110,3 +110,4 @@ switch: !include_dir_merge_list switch/
 shell_command: !include shell_command.yaml
 zone: !include_dir_merge_list zone/
 script: !include_dir_merge_named script/
+input_boolean: !include_dir_merge_named input_boolean/
