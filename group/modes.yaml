@@ -1,4 +1,5 @@
 modes:
+  control: hidden
   icon: mdi:dip-switch
   name: Schalter
   entities:

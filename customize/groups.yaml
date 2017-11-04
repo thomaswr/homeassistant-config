@@ -1,8 +1,13 @@
 group.weather:
   friendly_name: 'Wetter'
+  order: '1'
 
 group.lights:
   friendly_name: 'Beleuchtung'
+  order: '2'
+
+group.mediaplayers:
+  order: '3'
 
 group.computers:
   friendly_name: 'Computer'
