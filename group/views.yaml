@@ -3,11 +3,7 @@ default_view:
   entities:
     - group.weather
     - group.lights
-    - media_player.chromie_audio
-    - media_player.chromie
-    - media_player.kodi
-    - media_player.onkyo
-    - group.all_scenes
+    - group.mediaplayers
 
 persons:
   view: yes
@@ -16,8 +12,7 @@ persons:
     - device_tracker.thomas_nexus6p
     - device_tracker.p8lite
     - camera.thomas
-    - input_boolean.guest_mode
-    - input_boolean.vacation_mode
+    - group.modes
 
 monitor:
   view: yes
@@ -38,8 +33,4 @@ system:
   icon: mdi:settings
   entities:
     - group.systeminfo
-    - group.all_lights
-    - group.all_switches
-    - group.all_automations
-    - group.all_scripts
 
