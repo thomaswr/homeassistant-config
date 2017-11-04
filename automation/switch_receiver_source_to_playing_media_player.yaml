@@ -1,0 +1,37 @@
+- alias: switch receiver source on chromecast playing
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.chromie
+      to: 'playing'
+  action:
+    # Pause Kodi
+    - service: media_player.media_pause
+      entity_id: media_player.kodi
+    # Turn on Receiver
+    - service: media_player.turn_on
+      entity_id: media_player.onkyo
+    # Switch to Chromecast source
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.onkyo
+        source: strm-box
+
+- alias: switch receiver source on kodi playing
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+  action:
+    # Pause Chromecast
+    - service: media_player.media_pause
+      entity_id: media_player.chromie
+    # Turn on Receiver
+    - service: media_player.turn_on
+      entity_id: media_player.onkyo
+    # Switch to Kodi source
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.onkyo
+        source: Bluray
