@@ -7,8 +7,8 @@
 
   action:
     # Turn on Receiver
-    - service: switch.turn_on
-      entity_id: switch.onkyo
+    - service: media_player.turn_on
+      entity_id: media_player.onkyo
     # Switch to Kodi source
     - service: media_player.select_source
       data:
