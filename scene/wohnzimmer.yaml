@@ -4,7 +4,7 @@
 
 - name: Wohnzimmer normal
   entities:
-    light.wohnzimmer:
+    light.wohnzimmerlicht:
       state: on
       transition: 5
       profile: reading
@@ -13,14 +13,14 @@
       
 - name: Wohnzimmer relax
   entities:
-    light.wohnzimmer:
+    light.wohnzimmerlicht:
       state: on
       transition: 5
       profile: relax
 
 - name: Wohnzimmer TV Time
   entities:
-    light.wohnzimmer:
+    light.wohnzimmerlicht:
       state: on
       transition: 5
       profile: relax
@@ -35,7 +35,7 @@
       
 - name: Wohnzimmer Disco
   entities:
-    light.wohnzimmer:
+    light.wohnzimmerlicht:
       state: on
       transition: 2
       effect: colorloop
