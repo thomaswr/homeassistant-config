@@ -4,6 +4,9 @@
     - platform: state
       entity_id: media_player.chromie
       to: 'playing'
+  conditions:
+    - condition: template
+      value_template: "{{ states.media_player.onkyo.source.state != 'strm-box' }}"
   action:
     # Pause Kodi
     - service: media_player.media_pause
@@ -23,6 +26,9 @@
     - platform: state
       entity_id: media_player.kodi
       to: 'playing'
+  conditions:
+    - condition: template
+      value_template: "{{ states.media_player.onkyo.source.state != 'Bluray' }}"
   action:
     # Pause Chromecast
     - service: media_player.media_pause
