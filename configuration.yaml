@@ -100,6 +100,9 @@ ifttt:
 # enable wake on lan
 wake_on_lan:
 
+zwave:
+  usb_path: /dev/ttyACM0
+
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
