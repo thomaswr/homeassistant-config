@@ -1,20 +1,20 @@
 light.schlafzimmerlicht:
   hidden: true
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 light.vorzimmerlicht:
   hidden: true
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 light.wohnzimmerlicht:
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 light.regallicht:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 switch.smartplug1:
   friendly_name: "TV Beleuchtung"
   icon: mdi:lightbulb
-  emulated_hue: true
+  emulated_hue_hidden: false
   emulated_hue_name: "Fernsehlicht"

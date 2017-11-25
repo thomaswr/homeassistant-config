@@ -28,7 +28,7 @@ media_player.onkyo:
 switch.onkyo:
   friendly_name: 'Onkyo Receiver'
   icon: mdi:speaker
-  emulated_hue: true
+  emulated_hue_hidden: false
 device_tracker.onkyolocal:
   hidden: true
   
@@ -40,12 +40,12 @@ device_tracker.nintendoswitchlocal:
 # Device Operations
 switch.tvon:
   friendly_name: "Fernseher"
-  emulated_hue: true
+  emulated_hue_hidden: false
   emulated_hue_name: "Fernseher"
   icon: mdi:television
   
 switch.kodi_pause:
   friendly_name: "Pausiere Kodi"
-  emulated_hue: true
+  emulated_hue_hidden: false
   emulated_hue_name: "Kodi auf Pause"
   icon: mdi:television
