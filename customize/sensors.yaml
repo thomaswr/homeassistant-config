@@ -1,0 +1,21 @@
+sensor.temperature_158d0001ab1939:
+  friendly_name: "Temperatur Schlafzimmer"
+  icon: mdi:temperature-celsius
+sensor.humidity_158d0001ab1939:
+  friendly_name: "Luftfeuchtigkeit Schlafzimmer"
+  icon: mdi:water-percent
+
+sensor.temperature_158d0001db62c4:
+  friendly_name: "Temperatur Wohnzimmer"
+  icon: mdi:temperature-celsius
+sensor.humidity_158d0001db62c4:
+  friendly_name: "Luftfeuchtigkeit Wohnzimmer"
+  icon: mdi:water-percent
+
+binary_sensor.motion_sensor_158d0001660a33:
+  friendly_name: "Bewegung Vorzimmer"
+  icon: mdi:eye
+
+binary_sensor.motion_sensor_158d000165ffde:
+  friendly_name: "Bewegung Wohnzimmer"
+  icon: mdi:eye

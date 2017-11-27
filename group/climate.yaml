@@ -2,3 +2,7 @@ climate:
   control: hidden
   entities:
     - climate.danfoss_thermostat_kueche_heating_1
+    - sensor.temperature_158d0001ab1939
+    - sensor.humidity_158d0001ab1939
+    - sensor.temperature_158d0001db62c4
+    - sensor.humidity_158d0001db62c4
