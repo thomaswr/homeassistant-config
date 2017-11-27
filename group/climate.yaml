@@ -1,0 +1,4 @@
+climate:
+  control: hidden
+  entities:
+    - climate.danfoss_thermostat_kueche_heating_1

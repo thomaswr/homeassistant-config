@@ -2,12 +2,16 @@ group.weather:
   friendly_name: 'Wetter'
   order: '1'
 
-group.lights:
-  friendly_name: 'Beleuchtung'
+group.climate:
+  friendly_name: 'Heizung'
   order: '2'
 
-group.mediaplayers:
+group.lights:
+  friendly_name: 'Beleuchtung'
   order: '3'
+
+group.mediaplayers:
+  order: '4'
 
 group.computers:
   friendly_name: 'Computer'
