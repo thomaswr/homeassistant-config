@@ -103,6 +103,9 @@ wake_on_lan:
 zwave:
   usb_path: /dev/ttyACM0
 
+climate:
+  - platform: zwave
+
 xiaomi_aqara:
   gateways:
     - host: 10.70.0.7
