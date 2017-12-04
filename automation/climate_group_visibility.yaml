@@ -1,0 +1,12 @@
+- alias: climate group visibility
+  hide_entity: True
+  
+  trigger:
+    - platform: state
+      entity_id: input_boolean.heating_mode
+
+  action:
+    - service: group.set_visibility
+      entity_id: group.climate
+      data:
+        visible: input_boolean.heating_mode
