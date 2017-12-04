@@ -11,4 +11,9 @@ vacation_mode:
 heating_mode:
   name: Heizung
   icon: mdi:radiator
-  initial: "{{ now().month < 4 and now().month > 9 }}"
+  initial: >
+          {% if now().month <= 3 and now().month >= 10 %}
+            on
+          {% else %}
+            off
+          {% endif %}
