@@ -10,7 +10,7 @@
   condition:
     - condition: template
       value_template: >
-         {% if now().month <= 3 and now().month >= 10 %}
+         {% if now().month <= 3 or now().month >= 10 %}
            true
          {% endif %}
 
