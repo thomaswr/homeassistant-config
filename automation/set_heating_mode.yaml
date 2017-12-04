@@ -1,0 +1,19 @@
+
+- alias: set heating mode
+  hide_entity: True
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: sun
+      event: sunrise
+
+  condition:
+    - condition: template
+      value_template: >
+         {% if now().month <= 3 and now().month >= 10 %}
+           true
+         {% endif %}
+
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.heating_mode
