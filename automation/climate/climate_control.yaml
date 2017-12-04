@@ -1,0 +1,124 @@
+- alias: turn up heating on weekday morning
+  trigger:
+    - platform: time
+      at: '07:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_high
+
+- alias: turn up heating on weekend mornings
+  trigger:
+    - platform: time
+      at: '09:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
+      - condition: time
+        weekday:
+          - sat
+          - sun
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_high
+
+- alias: turn down heating during the night
+  trigger:
+    - platform: time
+      at: '00:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.heating_mode
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_low
+
+- alias: turn down heating if away
+  trigger:
+    platform: state
+      entity_id: device_tracker.thomas_nexus6p
+      state: 'not_home'
+      for:
+        minutes: 10
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_low
+
+- alias: turn up heating if home during daytime
+  trigger:
+    platform: state
+    entity_id: device_tracker.thomas_nexus6p
+    state: 'home'
+    # add proximity
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '09:30:00'
+        before: '23:30:00'
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_high
+
+- alias: turn down heating if vacation mode
+  trigger:
+    platform: state
+    entity_id: input_boolean.vacation_mode
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.set_heating_vacation
