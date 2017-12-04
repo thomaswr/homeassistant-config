@@ -1,5 +1,5 @@
 
-- alias: set heating mode
+- alias: set heating visibility
   hide_entity: True
   trigger:
     - platform: homeassistant
@@ -16,4 +16,4 @@
 
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.heating_mode
+      entity_id: input_boolean.heating_visible

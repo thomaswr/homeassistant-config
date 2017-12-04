@@ -3,7 +3,7 @@
 
   trigger:
     - platform: state
-      entity_id: input_boolean.heating_mode
+      entity_id: input_boolean.heating_visible
 
   action:
     - service: group.set_visibility
@@ -11,7 +11,7 @@
       data_template:
         entity_id: group.climate
         visible: >
-          {% if is_state('input_boolean.heating_mode', 'on') %}
+          {% if is_state('input_boolean.heating_visible', 'on') %}
             true
           {% else %}
             false

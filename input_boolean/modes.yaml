@@ -12,3 +12,7 @@ heating_mode:
   name: Heizung
   icon: mdi:radiator
   initial: off
+
+heating_visible:
+  hidden: true
+  initial: off
