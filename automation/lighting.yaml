@@ -21,3 +21,13 @@
     - delay: '00:05:00'
     - service: light.turn_off
       entity_id: light.vorzimmer
+
+
+- alias: "turn off all lights"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.switch_158d00016c39d4
+
+  action:
+    - service: light.turn_off
+      entity_id: group.all_lights
