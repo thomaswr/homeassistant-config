@@ -62,7 +62,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.thomas_nexus6p
-      state: 'not_home'
+      to: 'not_home'
       for:
         minutes: 10
   condition:
@@ -85,7 +85,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.thomas_nexus6p
-      state: 'home'
+      to: 'home'
       # add proximity
   condition:
     condition: and
