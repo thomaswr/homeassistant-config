@@ -31,3 +31,12 @@
   action:
     - service: light.turn_off
       entity_id: group.all_lights
+
+- alias: "toggle living room light"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.wall_switch_158d00015f2421
+
+  action:
+    - service: light.toggle
+      entity_id: light.wohnzimmerlicht
