@@ -27,6 +27,7 @@ server:
   view: yes
   icon: mdi:server
   entities:
+     - sensor.speedtest
      - group.transmission
 
 system:
