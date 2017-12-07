@@ -25,18 +25,34 @@
 
 - alias: "turn off all lights"
   trigger:
-    - platform: state
+    platform: event
+    event_type: click
+    event_data:
       entity_id: binary_sensor.switch_158d00016c39d4
-
+      click_type: long_click_press
   action:
     - service: light.turn_off
       entity_id: group.all_lights
 
-- alias: "toggle living room light"
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.wall_switch_158d00015f2421
 
+- alias: "toggle bedroom lights"
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d00016c39d4
+      click_type: single
+  action:
+    - service: light.toggle
+      entity_id: light.schlafzimmerlicht
+
+
+- alias: "toggle living room light"
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.wall_switch_158d00015f2421
+      click_type: single
   action:
     - service: light.toggle
       entity_id: light.wohnzimmerlicht
