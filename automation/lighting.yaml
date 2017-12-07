@@ -48,6 +48,7 @@
 
 
 - alias: "toggle living room light"
+  trigger:
     platform: event
     event_type: click
     event_data:
