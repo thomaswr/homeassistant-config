@@ -86,7 +86,12 @@
     - platform: state
       entity_id: group.tracker
       to: 'home'
-      # add proximity
+    - platform: numeric_state
+      entity_id: proximity.home
+      below: 2000
+    - platform: numeric_state
+      entity_id: proximity.home
+      below: 500
   condition:
     condition: and
     conditions:
