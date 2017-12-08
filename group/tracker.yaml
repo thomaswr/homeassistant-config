@@ -1,0 +1,3 @@
+tracker:
+  entities:
+    - device_tracker.thomas_nexus6p

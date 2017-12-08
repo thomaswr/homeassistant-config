@@ -61,7 +61,7 @@
 - alias: turn down heating if away
   trigger:
     - platform: state
-      entity_id: device_tracker.thomas_nexus6p
+      entity_id: group.tracker
       to: 'not_home'
       for:
         minutes: 10
@@ -84,7 +84,7 @@
 - alias: turn up heating if home during daytime
   trigger:
     - platform: state
-      entity_id: device_tracker.thomas_nexus6p
+      entity_id: group.tracker
       to: 'home'
       # add proximity
   condition:
