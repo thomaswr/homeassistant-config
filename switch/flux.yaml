@@ -1,0 +1,5 @@
+- platform: flux
+  lights:
+    - light.schlafzimmerlicht
+    - light.wohnzimmerlicht
+    - light.regallicht
