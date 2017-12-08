@@ -27,7 +27,7 @@ http:
   trusted_networks:
     - 127.0.0.1
     - ::1
-    - 10.70.0.10/24
+    - 10.70.0.0/24
   ip_ban_enabled: True
   login_attempts_threshold: 3
   
