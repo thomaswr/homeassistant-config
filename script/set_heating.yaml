@@ -12,6 +12,10 @@ set_heating_high:
       data:
         entity_id: climate.danfoss_thermostat_badezimmer_heating_1
         temperature: 21
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.danfoss_thermostat_schlafzimmer_heating_1
+        temperature: 20
 
 set_heating_low:
   sequence:
@@ -26,6 +30,10 @@ set_heating_low:
     - service: climate.set_temperature
       data:
         entity_id: climate.danfoss_thermostat_badezimmer_heating_1
+        temperature: 19
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.danfoss_thermostat_schlafzimmer_heating_1
         temperature: 19
 
 set_heating_vacation:
@@ -42,3 +50,7 @@ set_heating_vacation:
       data:
         entity_id: climate.danfoss_thermostat_badezimmer_heating_1
         temperature: 17
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.danfoss_thermostat_schlafzimmer_heating_1
+        temperature: 18
