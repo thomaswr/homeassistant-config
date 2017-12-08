@@ -6,12 +6,16 @@ group.heating:
   friendly_name: 'Heizung'
   order: '2'
 
-group.lights:
-  friendly_name: 'Beleuchtung'
+group.climate:
+  friendly_name: 'Klima'
   order: '3'
 
-group.mediaplayers:
+group.lights:
+  friendly_name: 'Beleuchtung'
   order: '4'
+
+group.mediaplayers:
+  order: '5'
 
 group.computers:
   friendly_name: 'Computer'
