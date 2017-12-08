@@ -7,9 +7,9 @@
 
   action:
     - service: group.set_visibility
-      entity_id: group.climate
+      entity_id: group.heating
       data_template:
-        entity_id: group.climate
+        entity_id: group.heating
         visible: >
           {% if is_state('input_boolean.heating_visible', 'on') %}
             true

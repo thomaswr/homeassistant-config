@@ -5,3 +5,4 @@ weather:
     - sensor.zamg_humidity
     - sensor.dark_sky_precip_probability
     - sensor.zamg_wind_speed
+    - group.climate

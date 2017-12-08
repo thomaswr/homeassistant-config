@@ -1,15 +1,15 @@
 sensor.temperature_158d0001ab1939:
-  friendly_name: "Temperatur Schlafzimmer"
+  friendly_name: "Schlafzimmer"
   icon: mdi:temperature-celsius
 sensor.humidity_158d0001ab1939:
-  friendly_name: "Luftfeuchtigkeit Schlafzimmer"
+  friendly_name: "Schlafzimmer"
   icon: mdi:water-percent
 
 sensor.temperature_158d0001db62c4:
-  friendly_name: "Temperatur Wohnzimmer"
+  friendly_name: "Wohnzimmer"
   icon: mdi:temperature-celsius
 sensor.humidity_158d0001db62c4:
-  friendly_name: "Luftfeuchtigkeit Wohnzimmer"
+  friendly_name: "Wohnzimmer"
   icon: mdi:water-percent
 
 binary_sensor.motion_sensor_158d0001660a33:

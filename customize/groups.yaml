@@ -2,7 +2,7 @@ group.weather:
   friendly_name: 'Wetter'
   order: '1'
 
-group.climate:
+group.heating:
   friendly_name: 'Heizung'
   order: '2'
 
