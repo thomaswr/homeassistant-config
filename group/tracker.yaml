@@ -1,3 +1,4 @@
 tracker:
   entities:
     - device_tracker.thomas
+    - device_tracker.thomas_2
