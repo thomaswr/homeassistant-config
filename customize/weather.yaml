@@ -1,5 +1,8 @@
 ## Weather ##
 ####################
+sensor.dark_sky_summary:
+  friendly_name: ' '
+
 sensor.dark_sky_temperature:
   friendly_name: 'Außentemperatur'
   
