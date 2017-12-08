@@ -5,4 +5,6 @@
 
   track_new_devices: yes
   interval_seconds: 60
-  consider_home: 00:05:00
+  consider_home: 00:10:00
+
+- platform: gpslogger
