@@ -18,3 +18,6 @@ switch.smartplug1:
   icon: mdi:lightbulb
   emulated_hue_hidden: false
   emulated_hue_name: "Fernsehlicht"
+
+light.gateway_light_34ce00906ac4:
+  friendly_name: "Aqara"

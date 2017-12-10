@@ -6,3 +6,4 @@ lights:
     - light.regallicht
     - switch.smartplug1
     - light.schlafzimmer
+    - light.gateway_light_34ce00906ac4
