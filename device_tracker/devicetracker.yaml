@@ -1,5 +1,7 @@
 - platform: nmap_tracker
   hosts: 10.70.0.1-120
+  exclude:
+    - 10.70.0.30
   scan_options: " --privileged -sP "
   home_interval: 5
 
