@@ -35,7 +35,7 @@
       after: '15:30:00'
       before: '23:59:00'
     - condition: template
-      value_template: '{% if states.automation.motion_detected_entrance.attributes.last_triggered  %} {{(as_timestamp(now())-as_timestamp(states.automation.motion_detected_entrance.attributes.last_triggered)) > 60*5 }}  {% else %}  true {% endif %}'
+      value_template: '{% if states.automation.motion_detected_livingroom.attributes.last_triggered  %} {{(as_timestamp(now())-as_timestamp(states.automation.motion_detected_livingroom.attributes.last_triggered)) > 60*5 }}  {% else %}  true {% endif %}'
 
   action:
     - service: light.turn_on
