@@ -133,7 +133,7 @@ proximity:
 
 history_graph:
   temperature:
-    name: Temperatur
+    name: temperature
     entities:
       - sensor.temperature_158d0001ab1939
       - sensor.temperature_158d0001db62c4
@@ -142,7 +142,7 @@ history_graph:
     hours_to_show: 24
     refresh: 600
   humidity:
-    name: Luftfeuchtigkeit
+    name: humidity
     entities:
       - sensor.humidity_158d0001ab1939
       - sensor.humidity_158d0001db62c4
