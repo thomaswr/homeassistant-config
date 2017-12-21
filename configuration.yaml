@@ -131,6 +131,17 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
+history_graph:
+  temperature:
+    name: Lights Graph
+    entities:
+      - sensor.temperature_158d0001ab1939
+      - sensor.temperature_158d0001db62c4
+      - sensor.temperature_158d0001f534ca
+      - sensor.temperature_158d0001fa5b0d
+    hours_to_show: 48
+    refresh: 600
+
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
