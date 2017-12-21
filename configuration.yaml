@@ -133,7 +133,7 @@ proximity:
 
 history_graph:
   temperature:
-    name: Lights Graph
+    name: temperature
     entities:
       - sensor.temperature_158d0001ab1939
       - sensor.temperature_158d0001db62c4
