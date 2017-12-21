@@ -13,3 +13,7 @@ climate:
     - sensor.humidity_158d0001ab1939
     - sensor.temperature_158d0001db62c4
     - sensor.humidity_158d0001db62c4
+    - sensor.temperature_158d0001f534ca
+    - sensor.humidity_158d0001f534ca
+    - sensor.temperature_158d0001fa5b0d
+    - sensor.humidity_158d0001fa5b0d
