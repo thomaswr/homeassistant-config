@@ -2,20 +2,25 @@ group.weather:
   friendly_name: 'Wetter'
   order: '1'
 
+history_graph.temperature:
+  order: '2'
+history_graph.humidity:
+  order: '3'
+
 group.heating:
   friendly_name: 'Heizung'
-  order: '2'
+  order: '4'
 
 group.climate:
   friendly_name: 'Klima'
-  order: '3'
+  order: '5'
 
 group.lights:
   friendly_name: 'Beleuchtung'
-  order: '4'
+  order: '6'
 
 group.mediaplayers:
-  order: '5'
+  order: '7'
 
 group.computers:
   friendly_name: 'Computer'
