@@ -1,5 +1,5 @@
   - platform: command_line
-    command: nmap -Pn -p 22 -oG - {{ !secret raspi3_hostname }} | grep 22/open > /dev/null 2>&1 && echo 1 || echo 0
+    command: !secret raspi3_online_command
     name: 'Raspi3'
     device_class: connectivity
     payload_on: 1
