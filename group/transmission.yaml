@@ -4,3 +4,4 @@ transmission:
     - sensor.transmission_down_speed
     - sensor.transmission_up_speed
     - switch.transmission_turtle_mode
+    - history_graph.transmission

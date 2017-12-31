@@ -13,3 +13,6 @@ sensor.transmission_up_speed:
 
 switch.transmission_turtle_mode:
   friendly_name: 'Turtle Mode'
+
+history_graph.transmission:
+  friendly_name: 'Traffic'
