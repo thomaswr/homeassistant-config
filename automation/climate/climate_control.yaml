@@ -48,15 +48,16 @@
     - platform: time
       at: '00:00:00'
   condition:
-    - condition: state
-      entity_id: input_boolean.heating_mode
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state: 'off'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.heating_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
   action:
-    - service: script.turn_on
-      entity_id: script.set_heating_low
+    service: script.set_heating_low
 
 - alias: turn down heating if away
   trigger:
