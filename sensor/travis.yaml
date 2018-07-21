@@ -1,7 +1,9 @@
 - platform: travisci
+  name: travis_master
   api_key: !secret github_token_travisci
   branch: master
 
 - platform: travisci
+  name: travis_dev
   api_key: !secret github_token_travisci
   branch: dev
