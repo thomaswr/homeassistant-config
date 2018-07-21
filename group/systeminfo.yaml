@@ -1,10 +1,24 @@
 systeminfo:
   entities:
-    #- binary_sensor.travis_status
-    - script.update_config
-    # - sensor.latestcommit
+    # Temp
     - sensor.pitemperature
-    - sensor.disk_used_home
-    - sensor.cpu_used
-    - sensor.ram_available 
+    # Uptime
     - sensor.since_last_boot_templated
+    # CPU/RAM
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    # Load
+    - sensor.load_1m
+    - sensor.load_5m
+    - sensor.load_15m
+    # Network
+    - sensor.network_in
+    - sensor.network_out
+    # Disk
+    - sensor.disk_use_percent
+    # Travis
+    - sensor.thomaswrhomeassistantconfig_state
+    - sensor.thomaswrhomeassistantconfig_last_build_duration
+    - sensor.thomaswrhomeassistantconfig_last_build_started_at
+    - sensor.thomaswrhomeassistantconfig_last_build_finished_at
+    - sensor.thomaswrhomeassistantconfig_last_build_state
