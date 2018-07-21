@@ -112,11 +112,11 @@ ifttt:
 # enable wake on lan
 wake_on_lan:
 
-# zwave:
-#   usb_path: /dev/ttyACM0
+zwave:
+  usb_path: /dev/ttyACM0
 
-# climate:
-#   - platform: zwave
+climate:
+  - platform: zwave
 
 xiaomi_aqara:
   gateways:
