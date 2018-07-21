@@ -10,3 +10,4 @@ home-assistant*.db
 secrets.yaml
 workspace
 phue.conf
+.zamg-station.json.gz

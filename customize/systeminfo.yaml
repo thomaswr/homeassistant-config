@@ -1,14 +1,10 @@
-binary_sensor.travis_status:
-  friendly_name: 'Build Status'
-  icon: mdi:check-circle-outline
+# binary_sensor.travis_status:
+#   friendly_name: 'Build Status'
+#   icon: mdi:check-circle-outline
 
-script.update_config:
-  friendly_name: 'Update Config'
-  icon: mdi:update
-
-sensor.latestcommit:
-  friendly_name: 'Letzter Commit'
-  icon: mdi:git
+# sensor.latestcommit:
+#   friendly_name: 'Letzter Commit'
+#   icon: mdi:git
   
 sensor.pitemperature:
   friendly_name: 'Temperatur'

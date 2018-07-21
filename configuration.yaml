@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/Vienna
   customize: !include_dir_merge_named customize
 
+hassio:
+
 # Show links to resources in log and frontend
 # introduction:
 
@@ -22,8 +24,8 @@ frontend:
 http:
   base_url: !secret http_baseurl
   api_password: !secret api_pass
-  ssl_certificate: !secret tls_cert
-  ssl_key: !secret tls_key
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   trusted_networks:
     - 127.0.0.1
     - ::1
@@ -72,7 +74,7 @@ recorder:
 logbook:
   exclude:
     entities:
-      - sensor.latestcommit
+      # - sensor.latestcommit
       - sensor.pitemperature
       - sensor.disk_use_home
       - sensor.cpu_use
@@ -110,11 +112,11 @@ ifttt:
 # enable wake on lan
 wake_on_lan:
 
-zwave:
-  usb_path: /dev/ttyACM0
+# zwave:
+#   usb_path: /dev/ttyACM0
 
-climate:
-  - platform: zwave
+# climate:
+#   - platform: zwave
 
 xiaomi_aqara:
   gateways:
@@ -164,7 +166,7 @@ sensor: !include_dir_merge_list sensor/
 binary_sensor: !include_dir_merge_list binary_sensor/
 scene: !include_dir_merge_list scene/
 switch: !include_dir_merge_list switch/
-shell_command: !include shell_command.yaml
+#shell_command: !include shell_command.yaml
 zone: !include_dir_merge_list zone/
 script: !include_dir_merge_named script/
 input_boolean: !include_dir_merge_named input_boolean/
