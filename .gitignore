@@ -16,3 +16,7 @@ phue.conf
 /.zamg-stations.json.gz
 /entity_registry.yaml
 /phue-*.conf
+*.xml
+pyozw.sqlite
+OZW_Log.txt
+/zwscene.xml
