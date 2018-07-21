@@ -10,3 +10,13 @@ home-assistant*.db
 secrets.yaml
 workspace
 phue.conf
+.zamg-station.json.gz
+
+/.storage/core.config_entries
+/.zamg-stations.json.gz
+/entity_registry.yaml
+/phue-*.conf
+*.xml
+pyozw.sqlite
+OZW_Log.txt
+/zwscene.xml

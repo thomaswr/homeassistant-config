@@ -1,5 +1,4 @@
-  - platform: rest
-    name: Travis Build Label
-    resource: https://api.travis-ci.org/repos/thomaswr/homeassistant-config/cc.json?branch=master
-    scan_interval: 60
-    value_template: "{{ value_json.last_build_number }}"
+- platform: travisci
+  name: travis_master
+  api_key: !secret github_token_travisci
+  branch: master

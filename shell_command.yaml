@@ -1,2 +1,2 @@
 suspend_htpc: '~/.homeassistant/shell_scripts/suspend_htpc.sh'
-pull_config: '~/.homeassistant/shell_scripts/pull_config.sh'
+#pull_config: '~/.homeassistant/shell_scripts/pull_config.sh'
