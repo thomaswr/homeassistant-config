@@ -168,11 +168,6 @@ history_graph:
     hours_to_show: 24
     refresh: 600
 
-vacuum:
-  - platform: xiaomi_miio
-    host: 10.70.0.40
-    token: !secret roborock_token
-
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
