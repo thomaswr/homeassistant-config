@@ -59,29 +59,6 @@
   action:
     service: script.set_heating_low
 
-- alias: turn down heating if away
-  trigger:
-    - platform: state
-      entity_id: group.tracker
-      to: 'not_home'
-      for:
-        minutes: 10
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.heating_mode
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.vacation_mode
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'off'
-  action:
-    - service: script.turn_on
-      entity_id: script.set_heating_low
-
 - alias: turn up heating if home during daytime
   trigger:
     - platform: state
