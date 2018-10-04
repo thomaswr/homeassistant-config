@@ -9,6 +9,10 @@ turn_on_tv:
         entity_id: media_player.onkyo
         source: Bluray
 
+    # Turn on TV
+    - service: switch.turn_on
+      entity_id: switch.samsung_tv
+
     # Turn on Kodi
     - service: switch.turn_on
       entity_id: switch.wake_htpc
@@ -25,6 +29,10 @@ turn_on_tv:
       
 turn_off_tv:
   sequence:
+    # Turn on TV
+    - service: switch.turn_off
+      entity_id: switch.samsung_tv
+
     # Turn off Kodi
     - service: switch.turn_off
       entity_id: switch.wake_htpc
