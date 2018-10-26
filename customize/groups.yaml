@@ -36,3 +36,6 @@ group.systeminfo:
 
 group.all_scenes:
   friendly_name: 'Szenen'
+
+group.all_automations:
+  hidden: false
