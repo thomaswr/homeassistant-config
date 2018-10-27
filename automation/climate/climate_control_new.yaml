@@ -1,8 +1,9 @@
 
-- alias: switch on living room heating when temp decreases during the day
+- alias: turn on living room heating when temp decreases during the day
   trigger:
     platform: numeric_state
     entity_id: sensor.temperature_158d0001db62c4
+    value_template: '{{ state | float }}'
     below: 20.5
     for:
       minutes: 15
@@ -26,10 +27,11 @@
         entity_id: climate.danfoss_thermostat_wohnzimmer_heating_1
         temperature: 25
         
-- alias: switch off living room heating when temp is fine
+- alias: turn off living room heating when temp is fine
   trigger:
     platform: numeric_state
     entity_id: sensor.temperature_158d0001db62c4
+    value_template: '{{ state.attributes.battery }}'
     above: 20.5
     for:
       minutes: 15
