@@ -4,6 +4,7 @@
     platform: numeric_state
     entity_id: sensor.temperature_158d0001db62c4
     value_template: '{{ state | float }}'
+    above: 0.0
     below: 20.5
     for:
       minutes: 15
