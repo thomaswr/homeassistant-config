@@ -1,8 +1,9 @@
 
 - alias: turn on living room heating when temp decreases during the day
   trigger:
-    platform: template
-    value_template: "{{ states.sensor.temperature_158d0001db62c4.state | float < 20.5 }}"
+    platform: state
+    entity_id: sensor.livingroom_is_warm
+    state: False
     for:
       minutes: 15
 
@@ -27,8 +28,9 @@
         
 - alias: turn off living room heating when temp is fine
   trigger:
-    platform: template
-    value_template: "{{ states.sensor.temperature_158d0001db62c4.state | float > 20.5 }}"
+    platform: state
+    entity_id: sensor.livingroom_is_warm
+    state: True
     for:
       minutes: 15
 
