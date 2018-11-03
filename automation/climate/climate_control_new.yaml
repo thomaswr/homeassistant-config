@@ -3,8 +3,8 @@
   trigger:
     platform: state
     entity_id: sensor.livingroom_is_warm
-    from: True
-    to: False
+    from: "True"
+    to: "False"
     for:
       minutes: 15
 
@@ -31,8 +31,8 @@
   trigger:
     platform: state
     entity_id: sensor.livingroom_is_warm
-    from: False
-    to: True
+    from: "False"
+    to: "True"
     for:
       minutes: 15
 
