@@ -1,4 +1,4 @@
-temperature:
+livingroom:
   name: livingroom
   entities:
     - sensor.temperature_158d0001db62c4
