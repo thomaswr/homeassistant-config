@@ -142,7 +142,41 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
-history_graph: !include_dir_merge_list history_graph/
+history_graph:
+  temperature:
+    name: temperature
+    entities:
+      - sensor.temperature_158d0001ab1939
+      - sensor.temperature_158d0001db62c4
+      - sensor.temperature_158d0001f534ca
+      - sensor.temperature_158d0001fa5b0d
+    hours_to_show: 24
+    refresh: 600
+  humidity:
+    name: humidity
+    entities:
+      - sensor.humidity_158d0001ab1939
+      - sensor.humidity_158d0001db62c4
+      - sensor.humidity_158d0001f534ca
+      - sensor.humidity_158d0001fa5b0d
+    hours_to_show: 24
+    refresh: 600
+  transmission:
+    entities:
+      - sensor.transmission_down_speed
+      - sensor.transmission_up_speed
+    hours_to_show: 24
+    refresh: 600
+  livingroom:
+    name: livingroom
+    entities:
+      - sensor.temperature_158d0001db62c4
+      - sensor.humidity_158d0001db62c4
+      - sensor.livingroom_is_warm
+      - climate.danfoss_thermostat_wohnzimmer_heating_1
+    hours_to_show: 24
+    refresh: 600
+
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/

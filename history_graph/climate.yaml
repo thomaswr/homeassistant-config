@@ -1,9 +1,0 @@
-livingroom:
-  name: livingroom
-  entities:
-    - sensor.temperature_158d0001db62c4
-    - sensor.humidity_158d0001db62c4
-    - sensor.livingroom_is_warm
-    - climate.danfoss_thermostat_wohnzimmer_heating_1
-  hours_to_show: 24
-  refresh: 600
