@@ -1,44 +1,47 @@
 
 - alias: turn on living room heating when temp decreases during the day
+
   trigger:
-    platform: state
-    entity_id: sensor.livingroom_is_warm
-    from: "True"
-    to: "False"
-    for:
-      minutes: 15
+    platform: time
+    minutes: '/30'
+    seconds: 00
 
   condition:
     condition: and
     conditions:
+      - condition: state
+        entity_id: sensor.livingroom_is_warm
+        state: 'False'
       - condition: state
         entity_id: input_boolean.heating_mode
         state: 'on'
       - condition: state
         entity_id: input_boolean.vacation_mode
         state: 'off'
-      #- condition: time
-      #  after: '07:30:00'
-      #  before: '00:30:00'
+      - condition: time
+        after: '07:30:00'
+        before: '00:30:00'
 
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.danfoss_thermostat_wohnzimmer_heating_1
         temperature: 23
-        
+
+
 - alias: turn off living room heating when temp is fine
+
   trigger:
-    platform: state
-    entity_id: sensor.livingroom_is_warm
-    from: "False"
-    to: "True"
-    for:
-      minutes: 15
+    platform: time
+    minutes: '/30'
+    seconds: 00
 
   condition:
     condition: and
     conditions:
+      - condition: state
+        entity_id: sensor.livingroom_is_warm
+        state: 'True'
       - condition: state
         entity_id: input_boolean.heating_mode
         state: 'on'
