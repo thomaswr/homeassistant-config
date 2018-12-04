@@ -1,1 +1,6 @@
 - platform: webostv
+  host: 10.70.0.29
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret lgtv_mac
