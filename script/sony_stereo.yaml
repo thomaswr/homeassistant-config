@@ -1,0 +1,62 @@
+sony_power_on_off:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgD8AFIQKhEXECoRFxAqERcQFxAXERYRFhEWESoAA0pRESoRFhEqERYRKhEWERYRFxAXERYRFhEqAANJURMoExQTKBMUEygTFBMVEhQTFBMVExUSKAADSlATKBMUEygTFBMoExQSFRMVExQSFRMUEygAA0pREygRFhEqERYRKhEWERcQFxAXERYRFhEqAANJUhEqEBcQKxAXECoRFxAXERYRFhEWERcQKgADSlERKhEWESoRFhEqERYRFhEWERcQFxEWESoAA0lRESoRFhEqERYRKhEWERcQFxEWERYRFhEqAANKUREqEBcRKhAXESoQFxEWERYRFhEXEBcRKQANBQAAAAAAAAAAAAAAAA=="
+
+sony_tuner_source:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgBwAFASKREWEhUSFhMUEikRFhMUExQTFREVEikAA15REygSFREXEhUQFxIpEhUSFRIVEhYRFhIpAANdURIpEhQTFBMVERYTJxIWERYRFhIVEhUSKQADXk8TKBQTFBMTFBMVEikSFRIWEhUSFRMUEikADQUAAAAAAAAAAA=="
+
+sony_audioin_source:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgCMAFERFhEqESoRKhEWESoRKhAXEBcRFhEWESoAAyNRERYRKhEqECoRFhEqESoRFhEWERcQFxEqAAMiUREWESoRKhEqERYRKhEpERcRFhEWERYRKgADIlIQFxEqECoRKhEWESoRKhEWERYRFhEXECoAAyNRERYRKhEqESkRFxEpESoRFhEXEBcRFhEqAA0FAAAAAAAAAAAAAAAA"
+
+sony_volume_up:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgBwAFERFhMoERYTFBMoExQSFRMUExUTFBMUEygAA15QExQTKBMUExQUJxIVFBQTFBMUEhUSFRMoAANeURMUEygSFRIVEygRFhMUExUTFBEWERYSKQADXVETFBIpExQTFBMoExQTFRIVExQTFBMUEygADQUAAAAAAAAAAA=="
+
+sony_volume_down:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgBwAFISKBMnExUTFBMoExQTFBMUEhUTFBQUEigAA0tRESoSKREWEhUSKRIVEhURFxAXEhURFhIpAANJUhArECoSFhAXECoTFRAXERYRFhIVEhYQKgADSlESKRIpEhURFhIpEhUSFRIVExUSFRAXESoADQUAAAAAAAAAAA=="
+
+sony_next_track:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgCwAFIQFxEqEBcRKhAqESoRFhEXECoRFhEqESoRKhEWERYRKhEqESoQFxEWAAGGUhEWESoRFhEqECoRKhEWERcQKhEXECoRKhEqERYRFhEqESoRKhEWERYAAYdRERYRKhEWESoRKhEqERYRFhEqERYRKhEqECoRFxAXESoQKhEqERYRFwABhlIQFxEqERYRKhAqESoRFhEXECoRFxAqESoRKhEWERYRKhEqESoQFxEWAA0FAAAAAAAAAAA="
+
+sony_prev_track:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgCEAFESKREWEhUSFRMoEikRFhEWEygSFREqEikRKhIVERYSKREqEigTFRIVAAGaUhEpEhYSFRIVEikRKRMVEhUSKRIVESoSKBIpEhURFxAqEikSKRAXERYAAZpSEikRFhIVEhUSKRIpEhUSFRIpEhUSKRIpEigSFhIVEikSKBIpEhUSFQANBQAAAAA="
+
+sony_play_pause:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgCwAFATFBMUEhYTFBMoEycTFBQUEycUFBIoEykSKRIUExUSKBMpEigTFBMUAAGvUBMUExURFhIVEygTJxMVExQTKBMUEygTJxMoEhUTFRMnEikSKREWEhUAAa9RERcQFxIVERYRKhEqEBcRFhEqERYRKhIpEikSFRIVESoSKRAqERYRFwABrVISFRIVEhYSFRIpEigSFRIWESkRFxIoESoSKREWEhUSKREqEikSFREWAA0FAAAAAAAAAAA="
+
+sony_stop:
+  sequence:
+    - service: switch.broadlink_send_packet_10_70_0_41
+        data:
+          packet:
+            - "JgCEAFETFRIVEhUSKRIpESkSFhIVECoTFRIoEygSKRIVEhUSKRIpEikSFRIVAAGaUhIVEhUSFRIpEikSKRIVEhUSKBMUEygRKhIoEhYSFRMoESkTKBIVEhUAAZxPExQUExMTFiUVJhUmExQUExUmFRIVJhUmFSUWEhUSFSYTJxQnFBMWEgANBQAAAAA="
