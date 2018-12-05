@@ -1,7 +1,6 @@
 mediadevices:
   control: hidden
   entities:
-    - switch.samsung_tv
     - switch.onkyo
     - sensor.sonystereo
     - sensor.chromecast

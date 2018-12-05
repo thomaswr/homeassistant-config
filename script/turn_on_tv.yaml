@@ -10,8 +10,8 @@ turn_on_tv:
         source: Bluray
 
     # Turn on TV
-    - service: switch.turn_on
-      entity_id: switch.samsung_tv
+    - service: media_player.turn_on
+      entity_id: media_player.lg_webos_smart_tv
 
     # Turn on Kodi
     - service: switch.turn_on
@@ -29,9 +29,9 @@ turn_on_tv:
       
 turn_off_tv:
   sequence:
-    # Turn on TV
-    - service: switch.turn_off
-      entity_id: switch.samsung_tv
+    # Turn off TV
+    - service: media_player.turn_off
+      entity_id: media_player.lg_webos_smart_tv
 
     # Turn off Kodi
     - service: switch.turn_off
