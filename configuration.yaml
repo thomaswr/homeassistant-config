@@ -180,6 +180,11 @@ history_graph:
     hours_to_show: 24
     refresh: 600
 
+tplink:
+  discovery: false
+  switch:
+    - host: 10.70.0.5
+
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
