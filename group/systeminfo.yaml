@@ -3,7 +3,7 @@ systeminfo:
     # Temp
     - sensor.pitemperature
     # Uptime
-    - sensor.since_last_boot_templated
+    - sensor.last_boot
     # CPU/RAM
     - sensor.processor_use
     - sensor.memory_use_percent

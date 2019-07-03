@@ -21,7 +21,3 @@ sensor.cpu_used:
 sensor.ram_available:
   friendly_name: 'RAM frei'
   icon: mdi:memory
-
-sensor.since_last_boot_templated:
-  friendly_name: 'Uptime'
-  icon: mdi:timetable
