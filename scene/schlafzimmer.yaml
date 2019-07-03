@@ -30,7 +30,7 @@
     light.wohnzimmer:
       state: off
       transition: 60
-    switch.smartplug1:
+    switch.fernsehlicht:
       state: off
 
 - name: Schlafzimmer Disco

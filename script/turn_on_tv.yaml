@@ -43,4 +43,4 @@ turn_off_tv:
     
     # Turn off Tv light
     - service: switch.turn_off
-      entity_id: switch.smartplug1
+      entity_id: switch.fernsehlicht

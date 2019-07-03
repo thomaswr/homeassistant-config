@@ -13,8 +13,7 @@ light.wohnzimmerlicht:
 light.regallicht:
   emulated_hue_hidden: true
   
-switch.smartplug1:
-  friendly_name: "TV Beleuchtung"
+switch.fernsehlicht:
   icon: mdi:lightbulb
   emulated_hue_hidden: false
   emulated_hue_name: "Fernsehlicht"
