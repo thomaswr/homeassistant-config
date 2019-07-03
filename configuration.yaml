@@ -11,6 +11,16 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Vienna
   customize: !include_dir_merge_named customize
+  # auth
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 127.0.0.1
+        - ::1
+        - 10.70.0.0/24
+    - type: legacy_api_password
+      api_password: !secret api_pass
 
 hassio:
 
@@ -23,16 +33,11 @@ frontend:
 
 http:
   base_url: !secret http_baseurl
-  api_password: !secret api_pass
   ssl_certificate: !secret tls_cert
   ssl_key: !secret tls_key
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 10.70.0.0/24
   ip_ban_enabled: True
   login_attempts_threshold: 3
-  
+
 # Checks for available updates
 updater:
 
@@ -72,9 +77,8 @@ recorder:
       - sensor.pitemperature
       - sensor.disk_use_home
       - sensor.cpu_use
-      - sensor.ram_free 
-      - sensor.since_last_boot
-      - sensor.since_last_boot_templated
+      - sensor.ram_free
+      - sensor.last_boot
       - sensor.transmission_down_speed
       - sensor.transmission_status
       - sensor.transmission_up_speed
@@ -88,8 +92,7 @@ logbook:
       - sensor.disk_use_home
       - sensor.cpu_use
       - sensor.ram_free 
-      - sensor.since_last_boot
-      - sensor.since_last_boot_templated
+      - sensor.last_boot
       - sensor.transmission_down_speed
       - sensor.transmission_status
       - sensor.transmission_up_speed
@@ -101,13 +104,13 @@ sun:
 map:
 
 # Light control
-light:
-  platform: hue
-  host: 10.70.0.3
+hue:
+  bridges:
+    - host: 10.70.0.3
 
 # Text to speech
 tts:
-  platform: google
+  platform: google_translate
   language: 'en'
 
 emulated_hue:
@@ -176,6 +179,11 @@ history_graph:
       - climate.danfoss_thermostat_wohnzimmer_heating_1
     hours_to_show: 24
     refresh: 600
+
+tplink:
+  discovery: false
+  switch:
+    - host: 10.70.0.5
 
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/

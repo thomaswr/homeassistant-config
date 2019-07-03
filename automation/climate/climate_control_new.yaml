@@ -2,7 +2,7 @@
 - alias: turn on living room heating when temp decreases during the day
 
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: '/30'
     seconds: 00
 
@@ -32,7 +32,7 @@
 - alias: turn off living room heating when temp is fine
 
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: '/30'
     seconds: 00
 
