@@ -105,7 +105,7 @@ light:
 
 # Text to speech
 tts:
-  platform: google
+  platform: google_translate
   language: 'en'
 
 emulated_hue:
