@@ -30,7 +30,6 @@ server:
   icon: mdi:server
   entities:
      - sensor.speedtest
-     - group.transmission
 
 automations:
   view: yes

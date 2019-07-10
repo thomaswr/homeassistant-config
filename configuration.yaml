@@ -79,9 +79,6 @@ recorder:
       - sensor.cpu_use
       - sensor.ram_free
       - sensor.last_boot
-      - sensor.transmission_down_speed
-      - sensor.transmission_status
-      - sensor.transmission_up_speed
 
 # View all events in a logbook
 logbook:
@@ -93,9 +90,6 @@ logbook:
       - sensor.cpu_use
       - sensor.ram_free 
       - sensor.last_boot
-      - sensor.transmission_down_speed
-      - sensor.transmission_status
-      - sensor.transmission_up_speed
 
 # Track the sun
 sun:
@@ -164,12 +158,6 @@ history_graph:
       - sensor.humidity_158d0001fa5b0d
     hours_to_show: 24
     refresh: 600
-  transmission:
-    entities:
-      - sensor.transmission_down_speed
-      - sensor.transmission_up_speed
-    hours_to_show: 24
-    refresh: 600
   livingroom:
     name: livingroom
     entities:
@@ -184,6 +172,11 @@ tplink:
   discovery: false
   switch:
     - host: 10.70.0.5
+
+transmission:
+  host: server.local
+  username: !secret transmission_user
+  password: !secret transmission_pass
 
 automation: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
