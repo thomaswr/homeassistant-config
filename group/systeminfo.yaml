@@ -17,8 +17,8 @@ systeminfo:
     # Disk
     - sensor.disk_use_percent
     # Travis
-    - sensor.thomaswrhomeassistantconfig_state
-    - sensor.thomaswrhomeassistantconfig_last_build_duration
-    - sensor.thomaswrhomeassistantconfig_last_build_started_at
-    - sensor.thomaswrhomeassistantconfig_last_build_finished_at
-    - sensor.thomaswrhomeassistantconfig_last_build_state
+    - sensor.thomaswr_homeassistant_config_state
+    - sensor.thomaswr_homeassistant_config_last_build_duration
+    - sensor.thomaswr_homeassistant_config_last_build_started_at
+    - sensor.thomaswr_homeassistant_config_last_build_finished_at
+    - sensor.thomaswr_homeassistant_config_last_build_state
