@@ -174,7 +174,7 @@ tplink:
     - host: 10.70.0.5
 
 transmission:
-  host: server.local
+  host: 10.70.0.10
   username: !secret transmission_user
   password: !secret transmission_pass
 
