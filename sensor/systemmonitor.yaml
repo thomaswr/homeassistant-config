@@ -3,6 +3,7 @@
     - type: disk_use_percent
       arg: /
     - type: memory_free
+    - type: memory_use_percent
     - type: processor_use
     - type: load_1m
     - type: load_5m
