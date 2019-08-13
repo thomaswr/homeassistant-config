@@ -19,8 +19,6 @@ homeassistant:
         - 127.0.0.1
         - ::1
         - 10.70.0.0/24
-    - type: legacy_api_password
-      api_password: !secret api_pass
 
 hassio:
 
