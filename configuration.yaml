@@ -108,9 +108,14 @@ tts:
   language: 'en'
 
 emulated_hue:
+  advertise_ip: 10.70.0.9
   expose_by_default: false
   exposed_domains:
     - script
+  entities:
+    switch.tvon:
+      name: "Fernseher"
+      hidden: false
   
 ifttt:
   key: !secret ifttt_key
