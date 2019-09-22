@@ -5,8 +5,6 @@ switch.wake_corei5:
 switch.wake_htpc:
   icon: mdi:movie
   friendly_name: 'HTPC'
-  emulated_hue_hidden: false
-  emulated_hue_name: "Kodi"
 
 switch.wake_server:
   icon: mdi:server

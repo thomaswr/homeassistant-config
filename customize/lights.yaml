@@ -1,22 +1,14 @@
 light.schlafzimmerlicht:
   hidden: true
-  emulated_hue_hidden: true
 
 light.vorzimmerlicht:
   hidden: true
-  emulated_hue_hidden: true
 
 light.wohnzimmerlicht:
   hidden: false
-  emulated_hue_hidden: true
-  
-light.regallicht:
-  emulated_hue_hidden: true
-  
+
 switch.fernsehlicht:
   icon: mdi:lightbulb
-  emulated_hue_hidden: false
-  emulated_hue_name: "Fernsehlicht"
 
 light.gateway_light_34ce00906ac4:
   friendly_name: "Aqara"
