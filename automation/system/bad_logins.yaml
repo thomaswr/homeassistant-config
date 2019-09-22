@@ -9,6 +9,7 @@
     value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
 
   action:
-    service: script.ifttt_notify
+    service: notify.notify
     data_template:
-      value1: 'Home Assistant: Login fehlgeschlagen!'
+      message: "Login fehlgeschlagen!"
+      title: "Sicherheit"

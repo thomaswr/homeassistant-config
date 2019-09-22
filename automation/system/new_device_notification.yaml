@@ -7,9 +7,9 @@
   trigger:
     - platform: event
       event_type: device_tracker_new_device
+
   action:
-    - service: script.ifttt_notify
-      data_template:
-        value1: 'Neues Gerät verbunden'
-        value2: '{{trigger.event.data.host_name}}'
-        value3: '{{trigger.event.data.entity_id}}'
+    service: notify.notify
+    data_template:
+      title: "Sicherheit"
+      message: "Neues Gerät verbunden. Host: {{trigger.event.data.host_name}}, ID: {{trigger.event.data.entity_id}}"

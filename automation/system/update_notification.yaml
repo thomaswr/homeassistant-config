@@ -1,22 +1,10 @@
-- alias: "Update Available Notification"
-  hide_entity: True
+- alias: Update Available Notification
   trigger:
-    platform: state
-    entity_id: updater.updater
-
-  condition:
-    - condition: template
-      value_template: "{{ states('updater.updater') != 'unknown' }}"
-
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
   action:
-    - service: script.ifttt_notify
+    - service: notify.notify
       data_template:
-        value1: 'Neue Homeassistant Version verfügbar: '
-        value2: "{{ states('updater.updater') }}"
-        value3: ''
-
-    - service: persistent_notification.create
-      data:
-        title: "Update Available"
-        message: "Home Assistant {{ states('updater.updater') }} verfügbar. - {{ as_timestamp(now()) | timestamp_custom('%I:%M:%S %p %d%b%Y', true) }}"
-        notification_id: "update_available"    
+        message: "Version {{ state_attr('binary_sensor.updater', 'newest_version') }} ist verfügbar."
