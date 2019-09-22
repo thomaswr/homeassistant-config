@@ -10,6 +10,7 @@ before_install:
   - sudo apt-get install -y libudev-dev
   - mv travis_secrets.yaml secrets.yaml
   - touch travis_cert_fakefile
+  - touch automations.yaml
 notifications:
   email: false
   webhooks:

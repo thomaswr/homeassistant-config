@@ -87,9 +87,10 @@
       click_type: double
   action:
     - service: light.toggle
-      entity_id: light.schlafzimmerlicht
-      transition: true
-      brightness: 1
+      data:
+        entity_id: light.schlafzimmerlicht
+        transition: true
+        brightness: 1
 
 - alias: "toggle living room light"
   trigger:
