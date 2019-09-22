@@ -191,7 +191,9 @@ notify:
     vapid_prv_key: !secret vapid_prv_key
     vapid_email: !secret vapid_email
 
-automation: !include_dir_merge_list automation/
+automation: !include automations.yaml
+automation old: !include_dir_merge_list automation/
+
 camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
 sensor: !include_dir_merge_list sensor/
