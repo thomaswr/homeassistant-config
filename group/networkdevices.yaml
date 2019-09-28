@@ -6,4 +6,3 @@ networkdevices:
     - sensor.philipshue
     - sensor.level1wifi
     - sensor.echodot
-    - binary_sensor.raspi3
