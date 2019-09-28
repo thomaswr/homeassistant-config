@@ -6,10 +6,10 @@
   hide_entity: True
   trigger:
     platform: template
-    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
+    value_template: "{{ states('persistent_notification.http_login') != 'unknown' }}"
 
   action:
     service: notify.notify
     data_template:
-      message: "Login fehlgeschlagen!"
+      message: "Login fehlgeschlagen! ({{ states('persistent_notification.http_login') }})"
       title: "Sicherheit"
