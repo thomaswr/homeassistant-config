@@ -4,6 +4,6 @@ mediaplayers:
   control: hidden
   entities:
     - media_player.onkyo
-    - media_player.kodi
+    #- media_player.kodi
     - media_player.chromie
     - media_player.chromie_audio

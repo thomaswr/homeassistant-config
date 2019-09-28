@@ -40,7 +40,3 @@ device_tracker.nintendoswitchlocal:
 switch.tvon:
   friendly_name: "Fernseher"
   icon: mdi:television
-  
-switch.kodi_pause:
-  friendly_name: "Pausiere Kodi"
-  icon: mdi:television

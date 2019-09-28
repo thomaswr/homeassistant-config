@@ -1,16 +1,16 @@
-- platform: kodi
-  host: htpc
-  port: 80
-  username: !secret kodi_user
-  password: !secret kodi_pass
+# - platform: kodi
+#   host: htpc
+#   port: 80
+#   username: !secret kodi_user
+#   password: !secret kodi_pass
   
-  turn_on_action:
-  - service: wake_on_lan.send_magic_packet
-    data:
-      mac: '00:1f:d0:56:b7:0b'
+#   turn_on_action:
+#   - service: wake_on_lan.send_magic_packet
+#     data:
+#       mac: '00:1f:d0:56:b7:0b'
       
-  turn_off_action:
-  - service: media_player.kodi_call_method
-    data:
-      entity_id: media_player.kodi
-      method: System.Suspend
+#   turn_off_action:
+#   - service: media_player.kodi_call_method
+#     data:
+#       entity_id: media_player.kodi
+#       method: System.Suspend
