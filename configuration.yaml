@@ -191,6 +191,16 @@ notify:
     vapid_prv_key: !secret vapid_prv_key
     vapid_email: !secret vapid_email
 
+influxdb:
+  username: homeassistant
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+  include:
+    entities:
+      - sensor.0x00158d0002c9fcb4_temperature
+      - sensor.0x00158d0002c9cc69_temperature
+
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automation/
 camera: !include_dir_merge_list camera/
