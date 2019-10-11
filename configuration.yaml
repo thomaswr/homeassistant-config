@@ -198,6 +198,8 @@ influxdb:
   default_measurement: state
   tags_attributes:
     - friendly_name
+    - device_class
+    - node_id
   include:
     domains:
       - binary_sensor
