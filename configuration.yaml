@@ -213,7 +213,7 @@ vacuum:
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automation/
-camera: !include_dir_merge_list camera/
+#camera: !include_dir_merge_list camera/
 media_player: !include_dir_merge_list media_player/
 sensor: !include_dir_merge_list sensor/
 binary_sensor: !include_dir_merge_list binary_sensor/
