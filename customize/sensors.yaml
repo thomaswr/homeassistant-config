@@ -1,7 +1,0 @@
-binary_sensor.motion_sensor_158d0001660a33:
-  friendly_name: "Bewegung Vorzimmer"
-  icon: mdi:eye
-
-binary_sensor.motion_sensor_158d000165ffde:
-  friendly_name: "Bewegung Wohnzimmer"
-  icon: mdi:eye

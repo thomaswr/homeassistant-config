@@ -2,7 +2,7 @@
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001660a33
+      entity_id: binary_sensor.0x00158d0001660a33_occupancy
       to: 'on'
 
   condition:
@@ -24,7 +24,7 @@
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d000165ffde
+      entity_id: binary_sensor.0x00158d000165ffde_occupancy
       to: 'on'
 
   condition:
