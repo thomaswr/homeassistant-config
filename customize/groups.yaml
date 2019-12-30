@@ -11,10 +11,6 @@ group.heating:
   friendly_name: 'Heizung'
   order: '4'
 
-group.climate:
-  friendly_name: 'Klima'
-  order: '5'
-
 group.lights:
   friendly_name: 'Beleuchtung'
   order: '6'
