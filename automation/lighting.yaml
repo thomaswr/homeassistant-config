@@ -95,9 +95,8 @@
 - alias: "toggle living room light"
   trigger:
     platform: state
-    event_data:
-      entity_id: sensor.0x00158d00015f2421_click
-      to: single
+    entity_id: sensor.0x00158d00015f2421_click
+    to: single
   action:
     - service: light.toggle
       entity_id: light.wohnzimmerlicht
