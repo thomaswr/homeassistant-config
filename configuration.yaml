@@ -131,12 +131,6 @@ zwave:
 climate:
   - platform: zwave
 
-xiaomi_aqara:
-  gateways:
-    - host: 10.70.0.7
-      mac: !secret aqara_mac
-      key: !secret aqara_key
-
 config:
 
 proximity:
@@ -145,35 +139,6 @@ proximity:
       - device_tracker.thomas
     tolerance: 50
     unit_of_measurement: m
-
-history_graph:
-  temperature:
-    name: temperature
-    entities:
-      - sensor.temperature_158d0001ab1939
-      - sensor.temperature_158d0001db62c4
-      - sensor.temperature_158d0001f534ca
-      - sensor.temperature_158d0001fa5b0d
-    hours_to_show: 24
-    refresh: 600
-  humidity:
-    name: humidity
-    entities:
-      - sensor.humidity_158d0001ab1939
-      - sensor.humidity_158d0001db62c4
-      - sensor.humidity_158d0001f534ca
-      - sensor.humidity_158d0001fa5b0d
-    hours_to_show: 24
-    refresh: 600
-  livingroom:
-    name: livingroom
-    entities:
-      - sensor.temperature_158d0001db62c4
-      - sensor.humidity_158d0001db62c4
-      - sensor.livingroom_is_warm
-      - climate.danfoss_thermostat_wohnzimmer_heating_1
-    hours_to_show: 24
-    refresh: 600
 
 tplink:
   discovery: false
