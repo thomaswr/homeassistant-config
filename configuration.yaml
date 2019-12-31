@@ -131,12 +131,6 @@ zwave:
 climate:
   - platform: zwave
 
-xiaomi_aqara:
-  gateways:
-    - host: 10.70.0.7
-      mac: !secret aqara_mac
-      key: !secret aqara_key
-
 config:
 
 proximity:
