@@ -69,22 +69,18 @@
 
 - alias: "toggle bedroom lights"
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d00016c39d4
-      click_type: single
+    platform: state
+    entity_id: sensor.0x00158d00016c39d4_click
+    to: single
   action:
     - service: light.toggle
       entity_id: light.schlafzimmerlicht
 
 - alias: "dim bedroom lights"
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d00016c39d4
-      click_type: double
+    platform: state
+    entity_id: sensor.0x00158d00016c39d4_click
+    to: double
   action:
     - service: light.toggle
       data:
