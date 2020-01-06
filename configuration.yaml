@@ -19,6 +19,7 @@ homeassistant:
         - 127.0.0.1
         - ::1
         - 10.70.0.0/24
+  packages: !include_dir_named packages
 
 hassio:
 
@@ -188,4 +189,3 @@ switch: !include_dir_merge_list switch/
 zone: !include_dir_merge_list zone/
 script: !include_dir_merge_named script/
 input_boolean: !include_dir_merge_named input_boolean/
-packages: !include_dir_named packages
