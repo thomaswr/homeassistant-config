@@ -44,11 +44,9 @@
 
 - alias: "turn off all lights"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.switch_158d00016c39d4
-        click_type: long_click_press
+    - platform: state
+      entity_id: sensor.0x00158d00016c39d4_click
+      to: long
     - platform: state
       entity_id: group.tracker
       to: 'not_home'
