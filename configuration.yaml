@@ -19,6 +19,7 @@ homeassistant:
         - 127.0.0.1
         - ::1
         - 10.70.0.0/24
+  packages: !include_dir_named packages
 
 hassio:
 
@@ -30,6 +31,7 @@ system_health:
 # Enables the frontend
 frontend:
   javascript_version: latest
+  themes: !include themes.yaml
 
 http:
   base_url: !secret http_baseurl
