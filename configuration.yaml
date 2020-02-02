@@ -21,6 +21,8 @@ homeassistant:
         - 10.70.0.0/24
   packages: !include_dir_named packages
 
+mobile_app:
+
 hassio:
 
 system_health:
