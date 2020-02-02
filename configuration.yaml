@@ -23,6 +23,8 @@ homeassistant:
 
 mobile_app:
 
+zeroconf:
+
 hassio:
 
 system_health:
