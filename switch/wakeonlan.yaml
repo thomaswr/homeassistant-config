@@ -1,7 +1,7 @@
 # - platform: wake_on_lan
 #   name: wake_htpc
 #   host: htpc
-#   mac_address: '00-1f-d0-56-b7-0b'
+#   mac: '00-1f-d0-56-b7-0b'
 #   turn_off:
 #     service: media_player.kodi_call_method
 #     data:
@@ -10,10 +10,10 @@
 
 - platform: wake_on_lan
   name: wake_corei5
-  host: corei5
-  mac_address: '40-16-7E-AA-DF-0F'
+  host: 10.70.0.12
+  mac: '40-16-7E-AA-DF-0F'
 
 - platform: wake_on_lan
   name: wake_server
-  host: server
-  mac_address: '00-25-90-c8-0d-7c'
+  host: 10.70.0.10
+  mac: '00-25-90-c8-0d-7c'
