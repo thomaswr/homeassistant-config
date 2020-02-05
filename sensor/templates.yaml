@@ -1,4 +1,0 @@
-# - platform: template
-#  sensors:
-#    livingroom_is_warm:
-#      value_template: "{{ states.sensor.0x00158d0001db62c4_temperature.state | float > 20.5 }}"
