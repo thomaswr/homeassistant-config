@@ -1,9 +1,0 @@
-lights:
-  #control: hidden
-  entities:
-    - light.vorzimmer
-    - light.wohnzimmerlicht
-    - light.regallicht
-    - switch.fernsehlicht
-    - light.schlafzimmer
-    - light.gateway_light_34ce00906ac4

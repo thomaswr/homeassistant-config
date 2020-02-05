@@ -1,13 +1,3 @@
 guest_mode:
   name: Gastmodus
   icon: mdi:sofa
-
-vacation_mode:
-  name: Urlaubsmodus
-  icon: mdi:wallet-travel
-
-heating_mode:
-  name: Heizung
-  icon: mdi:radiator
-
-heating_visible:
