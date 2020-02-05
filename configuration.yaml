@@ -39,8 +39,6 @@ frontend:
 
 http:
   base_url: !secret http_baseurl
-  ssl_certificate: !secret tls_cert
-  ssl_key: !secret tls_key
   ip_ban_enabled: True
   login_attempts_threshold: 3
 
@@ -181,6 +179,11 @@ vacuum:
   - platform: xiaomi_miio
     host: 10.70.0.40
     token: !secret vacuum_token
+
+light:
+  - platform: switch
+    name: Fernsehlicht
+    entity_id: switch.fernsehlicht
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automation/

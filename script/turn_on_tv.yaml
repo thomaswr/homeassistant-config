@@ -13,34 +13,26 @@ turn_on_tv:
     - service: media_player.turn_on
       entity_id: media_player.lg_webos_smart_tv
 
-    # Turn on Kodi
-    #- service: switch.turn_on
-    #  entity_id: switch.wake_htpc
-    
     # If it's after dark, resume...
     - condition: sun
       after: sunset
       # Optional offset value
       after_offset: "-1:00:00"
-     
+
     # Turn on Tv time lighting scene
     - service: scene.turn_on
       entity_id: scene.wohnzimmer_tv_time
-      
+
 turn_off_tv:
   sequence:
     # Turn off TV
     - service: media_player.turn_off
       entity_id: media_player.lg_webos_smart_tv
 
-    # Turn off Kodi
-    #- service: switch.turn_off
-    #  entity_id: switch.wake_htpc
-
     # Turn off Receiver
     - service: switch.turn_off
       entity_id: switch.onkyo
-    
+
     # Turn off Tv light
     - service: switch.turn_off
       entity_id: switch.fernsehlicht

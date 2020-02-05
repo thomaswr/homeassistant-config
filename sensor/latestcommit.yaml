@@ -1,3 +1,0 @@
-# - platform: command_line
-#   name: latestcommit
-#   command: "git -C ~/.homeassistant/ log --pretty=format:'%ad %<(28,trunc)%s' --date=short -n 1"

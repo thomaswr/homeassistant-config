@@ -1,8 +1,0 @@
-networkdevices:
-  control: hidden
-  entities:
-    - sensor.ddwrt
-    - sensor.googlewifi
-    - sensor.philipshue
-    - sensor.level1wifi
-    - sensor.echodot

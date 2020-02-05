@@ -1,7 +1,0 @@
-weather:
-  entities:
-    - sensor.dark_sky_summary
-    - sensor.dark_sky_temperature
-    - sensor.zamg_humidity
-    - sensor.dark_sky_precip_probability
-    - sensor.zamg_wind_speed
