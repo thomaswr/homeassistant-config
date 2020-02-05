@@ -6,9 +6,3 @@ light.vorzimmerlicht:
 
 light.wohnzimmerlicht:
   hidden: false
-
-switch.fernsehlicht:
-  icon: mdi:lightbulb
-
-light.gateway_light_34ce00906ac4:
-  friendly_name: "Aqara"
