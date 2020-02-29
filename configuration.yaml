@@ -42,6 +42,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - !secret trusted_proxy
+    - !secret trusted_proxy2
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
