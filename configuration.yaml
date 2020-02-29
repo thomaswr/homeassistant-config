@@ -39,7 +39,10 @@ frontend:
 
 http:
   base_url: !secret http_baseurl
-  ip_ban_enabled: True
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret trusted_proxy
+  ip_ban_enabled: true
   login_attempts_threshold: 3
 
 # Checks for available updates
