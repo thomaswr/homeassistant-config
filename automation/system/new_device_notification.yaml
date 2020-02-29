@@ -3,7 +3,6 @@
 ###################################
 
 - alias: New device connected
-  hide_entity: True
   trigger:
     - platform: event
       event_type: device_tracker_new_device
