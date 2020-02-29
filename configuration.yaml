@@ -114,17 +114,17 @@ tts:
   platform: google_translate
   language: 'en'
 
-emulated_hue:
-  listen_port: 80
-  advertise_ip: 10.70.0.9
-  advertise_port: 8300
-  expose_by_default: false
-  exposed_domains:
-    - script
-  entities:
-    switch.tvon:
-      name: "Fernseher"
-      hidden: false
+# emulated_hue:
+#   listen_port: 80
+#   advertise_ip: 10.70.0.9
+#   advertise_port: 8300
+#   expose_by_default: false
+#   exposed_domains:
+#     - script
+#   entities:
+#     switch.tvon:
+#       name: "Fernseher"
+#       hidden: false
   
 ifttt:
   key: !secret ifttt_key
