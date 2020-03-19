@@ -3,7 +3,7 @@ language: python
 python:
   - "3.7"
 install:
-  - pip3 install homeassistant==0.107.0
+  - pip3 install homeassistant==0.107.1
 script:
   - hass -c . --script check_config
 before_install:
