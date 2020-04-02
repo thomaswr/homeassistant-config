@@ -36,7 +36,7 @@ sensor.nintendoswitch:
 device_tracker.nintendoswitchlocal:
   hidden: true
 
-# Device Operations
-switch.tvon:
-  friendly_name: "Fernseher"
-  icon: mdi:television
+# # Device Operations
+# switch.tvon:
+#   friendly_name: "Fernseher"
+#   icon: mdi:television

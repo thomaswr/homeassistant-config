@@ -1,5 +1,4 @@
 - alias: dimming bed room at night
-  hide_entity: False
   trigger:
     - platform: time
       at: '22:30:00'
