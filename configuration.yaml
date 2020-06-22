@@ -38,7 +38,6 @@ frontend:
   themes: !include themes.yaml
 
 http:
-  base_url: !secret http_baseurl
   use_x_forwarded_for: true
   trusted_proxies:
     - !secret trusted_proxy
