@@ -103,11 +103,6 @@ sun:
 # Show map in UI
 map:
 
-# Light control
-hue:
-  bridges:
-    - host: 10.70.0.3
-
 # Text to speech
 tts:
   platform: google_translate
