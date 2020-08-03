@@ -190,6 +190,13 @@ webostv:
     data:
       mac: !secret lgtv_mac
 
+weather:
+  - platform: openweathermap
+    api_key: !secret openweathermap_api_key
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    mode: freedaily
+
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automation/
 #camera: !include_dir_merge_list camera/
