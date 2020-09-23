@@ -1,4 +1,0 @@
-- platform: broadlink
-  host: 10.70.0.41
-  mac: !secret broadlink_mac
-  timeout: 15
