@@ -1,0 +1,2 @@
+- platform: broadlink
+  mac: !secret broadlink_mac
