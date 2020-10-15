@@ -9,7 +9,7 @@
     - type: load_5m
     - type: load_15m
     - type: network_in
-      arg: eth0
+      arg: eno1
     - type: network_out
-      arg: eth0
+      arg: eno1
     - type: last_boot
