@@ -180,6 +180,8 @@ influxdb:
       override_measurement: temperature
     sensor.*battery:
       override_measurement: battery_level
+    sensor.*battery_level:
+      override_measurement: battery_level
 
 vacuum:
   - platform: xiaomi_miio
