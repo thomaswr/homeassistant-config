@@ -173,6 +173,13 @@ influxdb:
       - binary_sensor
       - sensor
       - climate
+  component_config_glob:
+    sensor.*humidity:
+      override_measurement: humidity
+    sensor.*temperature:
+      override_measurement: temperature
+    sensor.*battery.*:
+      override_measurement: battery
 
 vacuum:
   - platform: xiaomi_miio
