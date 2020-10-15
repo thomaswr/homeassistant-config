@@ -159,6 +159,7 @@ notify:
     vapid_email: !secret vapid_email
 
 influxdb:
+  host: !secret influxdb_host
   username: homeassistant
   password: !secret influxdb_password
   max_retries: 3
