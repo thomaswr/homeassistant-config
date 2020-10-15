@@ -1,0 +1,9 @@
+#########################
+## Media devices
+#########################
+media_player.onkyo:
+  friendly_name: 'Onkyo Receiver'
+  icon: mdi:speaker
+switch.onkyo:
+  friendly_name: 'Onkyo Receiver'
+  icon: mdi:speaker

@@ -1,9 +1,9 @@
 - platform: wake_on_lan
-  name: wake_corei5
+  name: Corei5
   host: 10.70.0.12
   mac: '40-16-7E-AA-DF-0F'
 
 - platform: wake_on_lan
-  name: wake_server
+  name: Server
   host: 10.70.0.10
   mac: '00-25-90-c8-0d-7c'

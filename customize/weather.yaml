@@ -1,0 +1,15 @@
+## Weather ##
+####################
+sensor.dark_sky_temperature:
+  friendly_name: 'Außentemperatur'
+  
+sensor.dark_sky_precip_probability:
+  friendly_name: 'Niederschlagswahrscheinlichkeit'
+
+sensor.zamg_humidity:
+  friendly_name: 'Luftfeuchtigkeit'
+  icon: mdi:water-percent
+
+sensor.zamg_wind_speed:
+  friendly_name: 'Wind'
+  icon: mdi:weather-windy
