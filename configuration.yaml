@@ -169,6 +169,8 @@ influxdb:
     - device_class
     - node_id
   include:
+    entities:
+      - group.tracker
     domains:
       - binary_sensor
       - sensor
