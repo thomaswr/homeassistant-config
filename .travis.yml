@@ -9,8 +9,7 @@ script:
 before_install:
   - sudo apt-get install -y ffmpeg libudev-dev python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - mv travis_secrets.yaml secrets.yaml
-  - touch travis_cert_fakefile
-  - touch automations.yaml
+  - touch travis_cert_fakefile automations.yaml scenes.yaml
 notifications:
   email: false
   webhooks:
