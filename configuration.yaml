@@ -192,8 +192,8 @@ vacuum:
 
 light:
   - platform: switch
-    name: Fernsehlicht
-    entity_id: switch.fernsehlicht
+    name: Stehlampe
+    entity_id: switch.tplinkkasa1
 
 webostv:
   host: 10.70.0.29
