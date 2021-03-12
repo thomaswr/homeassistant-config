@@ -209,6 +209,10 @@ weather:
     longitude: !secret home_longitude
     mode: freedaily
 
+input_number:
+counter:
+input_datetime:
+
 automation: !include automations.yaml
 media_player: !include_dir_merge_list media_player/
 sensor: !include_dir_merge_list sensor/
