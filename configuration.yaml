@@ -115,9 +115,6 @@ emulated_hue:
   exposed_domains:
     - script
     - light
-  
-ifttt:
-  key: !secret ifttt_key
 
 # enable wake on lan
 wake_on_lan:
