@@ -137,11 +137,6 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
-tplink:
-  discovery: false
-  switch:
-    - host: 10.70.0.5
-
 transmission:
   host: 10.70.0.10
   username: !secret transmission_user
