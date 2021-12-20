@@ -11,7 +11,7 @@ script:
     --privileged \
     --restart=unless-stopped \
     -e TZ=Europe/Vienna \
-    -v $TRAVIS_BUILD_DIR:/config \
+    -v ${TRAVIS_BUILD_DIR}:/config \
     --network=host \
     ghcr.io/home-assistant/home-assistant:stable \
     hass -c . --script check_config
