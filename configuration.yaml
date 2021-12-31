@@ -172,11 +172,6 @@ influxdb:
     sensor.*battery_level:
       override_measurement: battery_level
 
-vacuum:
-  - platform: xiaomi_miio
-    host: 10.70.0.40
-    token: !secret vacuum_token
-
 light:
   - platform: switch
     name: Stehlampe
