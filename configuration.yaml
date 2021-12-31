@@ -34,6 +34,7 @@ system_health:
 
 # Enables the frontend
 frontend:
+  javascript_version: latest
   themes: !include themes.yaml
 
 http:
