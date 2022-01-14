@@ -34,7 +34,6 @@ system_health:
 
 # Enables the frontend
 frontend:
-  javascript_version: latest
   themes: !include themes.yaml
 
 http:
@@ -116,13 +115,6 @@ emulated_hue:
   exposed_domains:
     - script
     - light
-  entities:
-    switch.tvon:
-      name: "Fernseher"
-      hidden: false
-  
-ifttt:
-  key: !secret ifttt_key
 
 # enable wake on lan
 wake_on_lan:
@@ -141,11 +133,6 @@ proximity:
       - device_tracker.thomas
     tolerance: 50
     unit_of_measurement: m
-
-tplink:
-  discovery: false
-  switch:
-    - host: 10.70.0.5
 
 transmission:
   host: 10.70.0.10
@@ -185,11 +172,6 @@ influxdb:
     sensor.*battery_level:
       override_measurement: battery_level
 
-vacuum:
-  - platform: xiaomi_miio
-    host: 10.70.0.40
-    token: !secret vacuum_token
-
 light:
   - platform: switch
     name: Stehlampe
@@ -209,6 +191,10 @@ weather:
     longitude: !secret home_longitude
     mode: freedaily
 
+input_number:
+counter:
+input_datetime:
+
 automation: !include automations.yaml
 media_player: !include_dir_merge_list media_player/
 sensor: !include_dir_merge_list sensor/
@@ -216,6 +202,5 @@ binary_sensor: !include_dir_merge_list binary_sensor/
 scene: !include scenes.yaml
 switch: !include_dir_merge_list switch/
 zone: !include_dir_merge_list zone/
-script: !include_dir_merge_named script/
-#script: !include scripts.yaml
+script: !include scripts.yaml
 input_boolean: !include_dir_merge_named input_boolean/

@@ -1,7 +1,7 @@
-dist: xenial
+dist: focal
 language: python
 python:
-  - "3.8"
+  - "3.9"
 install:
   - pip3 install homeassistant
 script:
@@ -9,12 +9,10 @@ script:
 before_install:
   - sudo apt-get install -y ffmpeg libudev-dev python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - mv travis_secrets.yaml secrets.yaml
-  - touch travis_cert_fakefile automations.yaml scenes.yaml
+  - touch travis_cert_fakefile automations.yaml scenes.yaml scripts.yaml
 notifications:
   email: false
   webhooks:
-    urls:
-      - $ifttt_webhook_url
     on_error: always
     on_failure: always
     on_start: never
