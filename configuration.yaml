@@ -116,12 +116,6 @@ emulated_hue:
 # enable wake on lan
 wake_on_lan:
 
-zwave:
-  usb_path: /dev/ttyACM0
-
-climate:
-  - platform: zwave
-
 config:
 
 proximity:
