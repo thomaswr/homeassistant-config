@@ -175,13 +175,6 @@ webostv:
     data:
       mac: !secret lgtv_mac
 
-weather:
-  - platform: openweathermap
-    api_key: !secret openweathermap_api_key
-    latitude: !secret home_latitude
-    longitude: !secret home_longitude
-    mode: freedaily
-
 input_number:
 counter:
 input_datetime:
