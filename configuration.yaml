@@ -180,6 +180,7 @@ device_tracker:
     host: !secret ddwrt_host
     username: !secret ddwrt_username
     password: !secret ddwrt_password
+    wireless_only: false
 
 input_number:
 counter:
