@@ -175,6 +175,12 @@ webostv:
     data:
       mac: !secret lgtv_mac
 
+device_tracker:
+  - platform: ddwrt
+    host: !secret ddwrt_host
+    username: !secret ddwrt_username
+    password: !secret ddwrt_password
+
 input_number:
 counter:
 input_datetime:
