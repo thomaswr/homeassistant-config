@@ -44,9 +44,6 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
-# Checks for available updates
-updater:
-
 # Discover some devices automatically
 discovery:
   ignore:
