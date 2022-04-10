@@ -125,11 +125,6 @@ proximity:
     tolerance: 50
     unit_of_measurement: m
 
-transmission:
-  host: 10.70.0.10
-  username: !secret transmission_user
-  password: !secret transmission_pass
-
 notify:
   - platform: html5
     vapid_pub_key: !secret vapid_pub_key
