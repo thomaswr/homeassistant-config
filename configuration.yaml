@@ -168,13 +168,6 @@ light:
     name: Stehlampe
     entity_id: switch.tplinkkasa1
 
-webostv:
-  host: 10.70.0.29
-  turn_on_action:
-    service: wake_on_lan.send_magic_packet
-    data:
-      mac: !secret lgtv_mac
-
 device_tracker:
   - platform: ddwrt
     host: !secret ddwrt_host
