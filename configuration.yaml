@@ -74,6 +74,7 @@ recorder:
       - sensor.humidity_*
       - sensor.0x00158d00*_temperature
       - sensor.0x00158d00*_humidity
+      - sensor.speedtest*
 
 # View all events in a logbook
 logbook:
