@@ -44,11 +44,6 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
-# Discover some devices automatically
-discovery:
-  ignore:
-   #- google_cast
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -91,13 +86,10 @@ logbook:
 # Track the sun
 sun:
 
-# Show map in UI
-map:
-
 # Text to speech
 tts:
   platform: google_translate
-  language: 'en'
+  language: "en"
 
 emulated_hue:
   listen_port: 80
@@ -112,13 +104,6 @@ emulated_hue:
 wake_on_lan:
 
 config:
-
-proximity:
-  home:
-    devices:
-      - device_tracker.thomas
-    tolerance: 50
-    unit_of_measurement: m
 
 notify:
   - platform: html5
