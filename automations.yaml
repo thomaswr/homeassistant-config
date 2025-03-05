@@ -1,0 +1,1354 @@
+- id: '1569684922737'
+  alias: '[ADMIN] Notify On Travis Build Failure'
+  trigger:
+  - entity_id: sensor.thomaswr_homeassistant_config_last_build_state
+    platform: state
+    to: failed
+  condition: []
+  action:
+  - data:
+      message: TravisCI Build fehlgeschlagen
+    service: notify.notify
+  mode: single
+- id: '1569744026924'
+  alias: '[ADMIN] Notify On Low System Resources'
+  trigger:
+  - entity_id: sensor.memory_use_percent
+    platform: numeric_state
+    above: '90'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - above: '88'
+    entity_id: sensor.processor_use
+    platform: numeric_state
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - data:
+      message: 'Alarm: Memory: {{ states(''sensor.memory_use_percent'') }}%, CPU:
+        {{ states(''sensor.processor_use'') }}%'
+    service: notify.notify
+  mode: single
+- id: '1587387244440'
+  alias: '[ADMIN] Restart NGINX On Imminent Cert Expiry'
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ as_timestamp(states.sensor.cert_expiry_timestamp_emuha_duckdns_org.state)
+      - as_timestamp(now()) < 604800 }}'
+  condition: []
+  action:
+  - data:
+      addon: core_nginx_proxy
+    service: hassio.addon_restart
+  - data:
+      message: 'Cert noch bis {{states.sensor.cert_expiry_timestamp_emuha_duckdns_org.state}}
+        gültig. Starte Nginx neu... '
+    service: notify.notify
+  mode: single
+- id: '1588933782684'
+  alias: '[ADMIN] Create weekly snapshot'
+  description: ''
+  trigger:
+  - at: 04:00:00
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - sun
+  action:
+  - data:
+      name: ({{now().strftime('%d.%m.%y')}})
+    service: hassio.backup_full
+  - data:
+      message: Creating weekly snapshot...
+    service: notify.notify
+  mode: single
+- id: '1602254132605'
+  alias: Turn On Entrance Light If Motion
+  description: Turns on entrace lights, if motion is detected. Considers sun.
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 73891df88040435b806dc048e51a4fd6
+    entity_id: binary_sensor.0x00158d0001660a33_occupancy
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 9af8d26e7ce54fcbba99a3ca97bc601a
+    entity_id: binary_sensor.0x000d6ffffe3940c1_occupancy
+    domain: binary_sensor
+    enabled: false
+  condition:
+  - condition: sun
+    after: sunset
+    after_offset: -00:45:00
+  action:
+  - type: turn_on
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1602254346223'
+  alias: Turn On Office Light If Motion
+  description: Turns on office lights, if motion is detected. Considers sun.
+  trigger:
+  - type: motion
+    platform: device
+    device_id: fc2e76e26a5142b1beebc115571c75f8
+    entity_id: binary_sensor.0x00158d000165ffde_occupancy
+    domain: binary_sensor
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      after: sunset
+      after_offset: -00:45:00
+    - condition: and
+      conditions:
+      - condition: device
+        type: is_off
+        device_id: 7f5e103ecc5919285ae0186000c0d9db
+        entity_id: light.0x00178801091b530c
+        domain: light
+      - condition: device
+        type: is_off
+        device_id: 73fa9438d5b3069e22bea65281bc58a5
+        entity_id: light.0x0017880106d6129d
+        domain: light
+  action:
+  - type: turn_on
+    device_id: 83721812d397b711e8748506447e1569
+    entity_id: light.0x00178801027b318c
+    domain: light
+  mode: single
+- id: '1602254581463'
+  alias: Turn Off All Lights When Button Pressed (Mijia)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: a359e0ad7be342d89bad025282976cb9
+    type: click
+    subtype: long
+    discovery_id: 0x00158d00016c39d4 click_long
+  condition: []
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: all
+  mode: single
+- id: '1602255216066'
+  alias: Turn Off All Lights When Nobody Is Home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.tracker
+    to: not_home
+    for: 00:05:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.guest_mode
+    state: 'off'
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: all
+  mode: single
+- id: '1602256632006'
+  alias: '[ADMIN] Notify On Newly Detected Network Device'
+  description: ''
+  trigger:
+  - platform: event
+    event_type: device_tracker_new_device
+    event_data: {}
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Sicherheit
+      message: 'Neues Gerät verbunden. Host: {{trigger.event.data.host_name}}, ID:
+        {{trigger.event.data.entity_id}}'
+  mode: single
+- id: '1602257425368'
+  alias: '[ADMIN] Notify On Failed Login Attempt'
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ states(''persistent_notification.http_login'') != ''unknown''
+      }}'
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Sicherheit
+      message: 'Login fehlgeschlagen! Von: ({{ states.persistent_notification.http_login.attributes.message.split
+        ("from ") [1]}}'
+  mode: queued
+  max: 5
+- id: '1602258117891'
+  alias: '[ADMIN] Notify On Startup'
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Home Assistant gestartet
+  mode: single
+- id: '1602258194967'
+  alias: '[ADMIN] Notify On Available Update'
+  description: ''
+  trigger:
+  - platform: state
+    from: 'off'
+    to: 'on'
+    entity_id: binary_sensor.home_assistant_website_update_available
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: 'Version {{ states("sensor.home_assistant_website") }} ist verfügbar.
+        Aktuell: {{ states("sensor.current_version") }}'
+  mode: single
+- id: '1602263748550'
+  alias: Turn On TV Scene When Button Pressed (Tradfri Toggle)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: eb8a0a884ab74639ac95ef37bfdb56d0
+    type: action
+    subtype: toggle
+    discovery_id: 0xd0cf5efffe425b6a action_toggle
+  condition: []
+  action:
+  - scene: scene.wohnzimmer_tv_time
+  mode: single
+- id: '1602267179010'
+  alias: Turn On TV Scene When Button Pressed (Tradfri Right)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: eb8a0a884ab74639ac95ef37bfdb56d0
+    type: action
+    subtype: arrow_right_click
+    discovery_id: 0xd0cf5efffe425b6a action_arrow_right_click
+  condition: []
+  action:
+  - scene: scene.wohnzimmer_normal
+  mode: single
+- id: '1602267453550'
+  alias: Toggle Vorzimmerlicht When Button Pressed (Tradfri Left)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: eb8a0a884ab74639ac95ef37bfdb56d0
+    type: action
+    subtype: arrow_left_click
+    discovery_id: 0xd0cf5efffe425b6a action_arrow_left_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1602270501582'
+  alias: Toggle Desk Lamp When Button Pressed (Aqara)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6bc0ca6903ce4877b43e89d8e2704c24
+    type: click
+    subtype: single
+    discovery_id: 0x00158d00015f2421 click_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 1adeeed8e3cc4295b1f2628de4506e1b
+    entity_id: light.0xd0cf5efffeba7818
+    domain: light
+  mode: single
+- id: '1603306191008'
+  alias: Notify On Vacuum Opportunity
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.tracker
+    for: 00:10:00
+    to: not_home
+  condition:
+  - condition: template
+    value_template: '{{ as_timestamp(now()) - as_timestamp(states.vacuum.valetudo_mellowstiffdolphin.last_changed)
+      > 259200}}'
+  - condition: state
+    entity_id: vacuum.valetudo_mellowstiffdolphin
+    state: docked
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    data:
+      message: Staubsaugen?
+      data:
+        actions:
+        - action: start-vacuum
+          title: Ok
+  mode: single
+- id: '1603306353938'
+  alias: Turn On Vacuum On Notification Action
+  description: ''
+  trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: start-vacuum
+  condition: []
+  action:
+  - service: vacuum.start
+    data: {}
+    target:
+      entity_id:
+      - vacuum.s5_mellowstiffdolphin
+  - service: notify.notify
+    data:
+      message: Starte Robo
+  - delay:
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - service: counter.increment
+    target:
+      entity_id: counter.vacuum_cleanings_since_bin_emptying
+  mode: single
+- id: '1603903316935'
+  alias: Turn On Vacuum On Schedule
+  description: ''
+  trigger:
+  - platform: time
+    at: 09:30:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - thu
+  - condition: state
+    entity_id: group.tracker
+    state: not_home
+  action:
+  - service: vacuum.start
+    data: {}
+    target:
+      entity_id:
+      - vacuum.valetudo_mellowstiffdolphin
+  - service: notify.notify
+    data:
+      message: Starte Robo
+  - delay:
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - service: counter.increment
+    target:
+      entity_id: counter.vacuum_cleanings_since_bin_emptying
+  mode: single
+- id: '1609752971350'
+  alias: Turn On Bedroom Light On Smartphone Alarm Clock Time
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{as_timestamp(states(''sensor.pixel_2_xl_next_alarm'')|timestamp_local)
+      != None and as_timestamp(now()) > (as_timestamp(states(''sensor.pixel_2_xl_next_alarm''))
+      - 60)}}'
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: person.silvia
+    state: not_home
+  action:
+  - service: light.turn_on
+    data:
+      brightness: 255
+      kelvin: 6410
+    entity_id: light.schlafzimmerlicht
+  mode: single
+- id: '1613305548778'
+  alias: Toggle Office Scene When Button Pressed (Tradfri Toggle)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: eb8a0a884ab74639ac95ef37bfdb56d0
+    type: action
+    subtype: toggle
+    discovery_id: 0xd0cf5efffe425b6a action_toggle
+  - platform: device
+    domain: mqtt
+    device_id: a359e0ad7be342d89bad025282976cb9
+    type: click
+    subtype: single
+    discovery_id: 0x00158d00016c39d4 click_single
+  condition: []
+  action:
+  - service: input_select.select_next
+    data: {}
+    entity_id: input_select.office_scenes
+  mode: single
+- id: '1613305849120'
+  alias: Turn On Office Default scene
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.office_scenes
+    to: Office Default
+  condition: []
+  action:
+  - scene: scene.arbeitszimmer_normal
+  mode: single
+- id: '1613305875833'
+  alias: Turn On Office TV Mode scene
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.office_scenes
+    to: Office TV Mode
+  condition: []
+  action:
+  - scene: scene.tv_scene
+  mode: single
+- id: '1613305940995'
+  alias: Turn On Office Off scene
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.office_scenes
+    to: Office Off
+  condition: []
+  action:
+  - scene: scene.arbeitszimmer_off
+  mode: single
+- id: '1613913016180'
+  alias: Toggle Livingroom Scene when Buttons Pressed (Tradfri/b516 Toggle)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2ead3e74db3d9dbe17163fc6c81eb2a1
+    type: action
+    subtype: toggle
+    discovery_id: 0x5c0272fffe8cb516 action_toggle
+  condition: []
+  action:
+  - service: input_select.select_next
+    data: {}
+    entity_id: input_select.livingroom_scenes
+  mode: single
+- id: '1613913158168'
+  alias: Turn On Livingroom Default scene
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.livingroom_scenes
+    to: Livingroom Default
+  condition: []
+  action:
+  - scene: scene.livingroom_default
+  mode: single
+- id: '1613913178948'
+  alias: Turn On Livingroom Off scene
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.livingroom_scenes
+    to: Livingroom Off
+  condition: []
+  action:
+  - scene: scene.livingroom_off
+  mode: single
+- id: '1613913592207'
+  alias: Toggle Livingroom Reading Light When Button Pressed (Tradfri2/b516 Brightness
+    up)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2ead3e74db3d9dbe17163fc6c81eb2a1
+    type: action
+    subtype: brightness_up_click
+    discovery_id: 0x5c0272fffe8cb516 action_brightness_up_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: 2bacbfa359d959db173c77f1769395e6
+    entity_id: light.0x00124b001b8f5796
+    domain: light
+  mode: single
+- id: '1613913639767'
+  alias: Toggle small Livingroom Lamp When Button Pressed (Tradfri2/b516 Brightness
+    down)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2ead3e74db3d9dbe17163fc6c81eb2a1
+    type: action
+    subtype: brightness_down_click
+    discovery_id: 0x5c0272fffe8cb516 action_brightness_down_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: 5e3a781475512d2c917c2f588c7b0e25
+    entity_id: a8c3da4e022ab4efbe1d8e60a42b96d3
+    domain: light
+  mode: single
+- id: '1617449555384'
+  alias: Notify On Kapacitor Webhook
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: 3b8832f9-1a38-4ea8-8941-ed082705f588
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    data:
+      title: Kapacitor
+      message: '{{trigger.json.message}}'
+  mode: single
+- id: '1617454729267'
+  alias: Toggle Hall Light when Button Pressed (Tradfri Toggle)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e6d31f2441a4158c618e86984e6e8ca7
+    type: action
+    subtype: 'on'
+    discovery_id: 0x84ba20fffe80b275 action_on
+  condition: []
+  action:
+  - type: toggle
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1631444584535'
+  alias: on movement
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 73891df88040435b806dc048e51a4fd6
+    entity_id: binary_sensor.0x00158d0001660a33_occupancy
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 9af8d26e7ce54fcbba99a3ca97bc601a
+    entity_id: binary_sensor.0x000d6ffffe3940c1_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    data:
+      message: Bewegung!
+  mode: single
+- id: '1637695164363'
+  alias: Save time of last Vacuuming
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: vacuum.valetudo_mellowstiffdolphin
+    to: cleaning
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  condition: []
+  action:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.lastvacuumingtime
+    data:
+      timestamp: '{{ now().timestamp() }}'
+  mode: single
+- id: '1640875165964'
+  alias: Turn On Desktop on Button Press
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e1eb23151b8bf34c90d09dfc91949f3d
+    type: action
+    subtype: 'on'
+    discovery_id: 0x0c4314fffeaaf491 action_on
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.corei5
+  mode: single
+- id: '1640875783764'
+  alias: Toggle Kitchen Radio On Button Press
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c2fca2cb00dffbae53b65e0030863249
+    type: action
+    subtype: 'on'
+    discovery_id: 0x0c4314fffe7a4dea action_on
+  condition: []
+  action:
+  - service: script.sony_power_on_off
+  mode: single
+- id: '1650041304170'
+  alias: Notify on full vacuum bin
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: counter.vacuum_cleanings_since_bin_emptying
+    above: '5'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition:
+  - condition: state
+    entity_id: person.thomas
+    state: home
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    data:
+      title: Robo muss geleert werden
+      message: 'Fahrten seit letzter Entleerung: {{ states("counter.vacuum_cleanings_since_bin_emptying")
+        }}'
+  mode: single
+- id: '1657383207347'
+  alias: Notify on high server HDD temp
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.server_dev_sdb
+    to: '51'
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    data:
+      message: Server HDD temp high!
+  mode: single
+- id: '1670681000429'
+  alias: Toggle Livingroom Lamp When Button Pressed (Tradfri2/b516 Arrow left click)
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2ead3e74db3d9dbe17163fc6c81eb2a1
+    type: action
+    subtype: arrow_left_click
+    discovery_id: 0x5c0272fffe8cb516 action_arrow_left_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: 1e4b60a37e3e7c49cb447624e0ed5d46
+    entity_id: 9377d249e4d0e8bc2035ddcd244fbc5d
+    domain: light
+  mode: single
+- id: '1672242887228'
+  alias: Toggle Office Scenes on HueDimmer1 On Press
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: ac09535ca40c2ae2b80a7be65a943ccc
+    type: action
+    subtype: on_press
+    trigger: device
+  conditions: []
+  actions:
+  - data: {}
+    target:
+      entity_id: input_select.office_scenes
+    action: input_select.select_next
+  mode: single
+- id: '1672242990847'
+  alias: Switch off Office Light on HueDimmer1 Off
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: ac09535ca40c2ae2b80a7be65a943ccc
+    type: action
+    subtype: off_press
+    trigger: device
+  conditions: []
+  actions:
+  - target:
+      entity_id: scene.arbeitszimmer_off
+    metadata: {}
+    action: scene.turn_on
+    data: {}
+  mode: single
+- id: '1672243097829'
+  alias: Decrease Offlice Light Brightness on HueDimmer1 Down
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: ac09535ca40c2ae2b80a7be65a943ccc
+    type: action
+    subtype: down_press
+    trigger: device
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 83721812d397b711e8748506447e1569
+    entity_id: light.0x00178801027b318c
+    domain: light
+  actions:
+  - device_id: 83721812d397b711e8748506447e1569
+    domain: light
+    entity_id: light.0x00178801027b318c
+    type: brightness_decrease
+  mode: single
+- id: '1672243251086'
+  alias: Increase Office Light Brightness on HueDimmer1 Up
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: ac09535ca40c2ae2b80a7be65a943ccc
+    type: action
+    subtype: up_press
+    trigger: device
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 83721812d397b711e8748506447e1569
+    entity_id: light.0x00178801027b318c
+    domain: light
+  actions:
+  - device_id: 83721812d397b711e8748506447e1569
+    domain: light
+    entity_id: light.0x00178801027b318c
+    type: brightness_increase
+  mode: single
+- id: '1672260034402'
+  alias: Turn On Kinderzimmerlicht on HueDimmer2 On
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8f52c1286f9440c20c9544f3a8e10361
+    type: action
+    subtype: on_press
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 013e3c6ed0f2c2340ec30c3c86576d02
+    entity_id: light.0x0017880102798e6b
+    domain: light
+  mode: single
+- id: '1672260118019'
+  alias: Turn Off Kinderzimmerlicht on Huedimmer2 Off
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8f52c1286f9440c20c9544f3a8e10361
+    type: action
+    subtype: off_press
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: 013e3c6ed0f2c2340ec30c3c86576d02
+    entity_id: light.0x0017880102798e6b
+    domain: light
+  mode: single
+- id: '1672260151917'
+  alias: Increase Kinderzimmerlicht Brightness on HueDimmer2 Up
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8f52c1286f9440c20c9544f3a8e10361
+    type: action
+    subtype: up_press
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 013e3c6ed0f2c2340ec30c3c86576d02
+    domain: light
+    entity_id: light.0x0017880102798e6b
+    type: brightness_increase
+  mode: single
+- id: '1672260178880'
+  alias: Decrease Kinderzimmerlicht Brightness on HueDimmer2 Down
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8f52c1286f9440c20c9544f3a8e10361
+    type: action
+    subtype: down_press
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 013e3c6ed0f2c2340ec30c3c86576d02
+    domain: light
+    entity_id: light.0x0017880102798e6b
+    type: brightness_decrease
+  mode: single
+- id: '1672262321814'
+  alias: Turn On Vorzimmerlicht on HueDimmer3 On
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 3e3f4b5a3fa9190407635e6f19f10a3d
+    type: action
+    subtype: on_press
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1672262357212'
+  alias: Turn Off Vorzimmerlicht on HueDimmer3 Off
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 3e3f4b5a3fa9190407635e6f19f10a3d
+    type: action
+    subtype: off_press
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1676640334850'
+  alias: 'Turn off Entrance light at night if no motion '
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 73891df88040435b806dc048e51a4fd6
+    entity_id: binary_sensor.0x00158d0001660a33_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition:
+  - condition: time
+    after: 00:00:00
+    before: 07:00:00
+    weekday:
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+    - sun
+  action:
+  - type: turn_off
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1676641007667'
+  alias: Turn on Entrance light at night
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9af8d26e7ce54fcbba99a3ca97bc601a
+    entity_id: binary_sensor.0x000d6ffffe3940c1_occupancy
+    domain: binary_sensor
+  condition:
+  - condition: time
+    after: 00:00:00
+    before: 06:00:00
+    weekday:
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+    - sun
+  action:
+  - type: turn_on
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1676641021417'
+  alias: Turn on Entrance light at night
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9af8d26e7ce54fcbba99a3ca97bc601a
+    entity_id: binary_sensor.0x000d6ffffe3940c1_occupancy
+    domain: binary_sensor
+  condition:
+  - condition: time
+    after: 00:00:00
+    before: 07:00:00
+    weekday:
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+    - sun
+  action:
+  - type: turn_on
+    device_id: dfa3d5bc2d1819b93aefdcbb2018e2e7
+    entity_id: light.0x00178801027b317e
+    domain: light
+  mode: single
+- id: '1680902169200'
+  alias: Calculate WAN in delta
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.wan_in
+  condition: []
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.wan_in_delta
+      value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int)
+        * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated)
+        ) }}'
+  mode: single
+- id: '1680902476424'
+  alias: Calculate WAN out delta
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.wan_out
+  condition: []
+  action:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.wan_out_delta
+      value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int)
+        * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated)
+        ) }}'
+  mode: single
+- id: '1699039200838'
+  alias: '[Kodi] Update Libraries'
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  - platform: webhook
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+    webhook_id: kodi-update-libraries-yM3MUPVhdcujLkrh-fohpzo3
+  condition: []
+  action:
+  - service: kodi.call_method
+    data:
+      method: VideoLibrary.Scan
+    target:
+      entity_id: media_player.kodi_libreelec_local_2
+  - service: kodi.call_method
+    data:
+      method: AudioLibrary.Scan
+    target:
+      entity_id: media_player.kodi_libreelec_local_2
+  mode: single
+- id: '1699039551896'
+  alias: '[Kodi] Export library to XML/jpeg'
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:15:00
+  condition: []
+  action:
+  - service: kodi.call_method
+    data:
+      method: VideoLibrary.Export
+      options:
+        overwrite: false
+        actorthumbs: true
+        images: true
+    target:
+      entity_id: media_player.kodi_libreelec_local_2
+  mode: single
+- id: '1699180066902'
+  alias: Start robo clean on Tag scan
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 3bac2878-2335-48b1-ae72-ec05d7d507a9
+  condition: []
+  action:
+  - device_id: 581e529cdafe495daec3f860541aa1cc
+    domain: vacuum
+    entity_id: f8e87f513ad88f378c36be05dbd2265f
+    type: clean
+  mode: single
+- id: '1699867452265'
+  alias: Tag test tag is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 896b3b14-aaec-4756-94ec-e0ef2ea26556
+  condition: []
+  action:
+  - type: toggle
+    device_id: 5e3a781475512d2c917c2f588c7b0e25
+    entity_id: a8c3da4e022ab4efbe1d8e60a42b96d3
+    domain: light
+  mode: single
+- id: '1699876127818'
+  alias: Radio switch to tuner when pressed off
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: c2fca2cb00dffbae53b65e0030863249
+    type: action
+    subtype: 'off'
+    discovery_id: 0x0c4314fffe7a4dea action_off
+  condition: []
+  action:
+  - service: script.sony_tuner_source
+    data: {}
+  mode: single
+- id: '1699982823776'
+  alias: Switch Kitchen Radio to Audio In when Chromie Audio is playing
+  description: ''
+  trigger:
+  - platform: device
+    device_id: f35616f8f7294c92abe4c563aa797a54
+    domain: media_player
+    entity_id: 176b48744ba8595773dee927ecd0479a
+    type: playing
+  condition: []
+  action:
+  - service: script.sony_audioin_source
+    data: {}
+  mode: single
+- id: '1699983061711'
+  alias: Toggle Kitchen Radio back to Tuner if Chromie Audio is idle
+  description: ''
+  trigger:
+  - platform: device
+    device_id: f35616f8f7294c92abe4c563aa797a54
+    domain: media_player
+    entity_id: 176b48744ba8595773dee927ecd0479a
+    type: turned_off
+  condition: []
+  action:
+  - service: script.sony_tuner_source
+    data: {}
+  mode: single
+- id: '1701207607433'
+  alias: Draw weather info on epaper on schedule
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:45:00
+  - platform: time
+    at: 07:45:00
+  - platform: time
+    at: 08:45:00
+  - platform: time
+    at: '10:00:00'
+  - platform: time
+    at: '12:00:00'
+  - platform: time
+    at: '16:00:00'
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: '20:00:00'
+  condition: []
+  action:
+  - service: open_epaper_link.drawcustom
+    target:
+      entity_id:
+      - open_epaper_link.0000021f476a3b1a
+    data:
+      background: white
+      rotate: 0
+      payload:
+      - type: text
+        value: Wien
+        x: 10
+        y: 10
+        size: 40
+        color: black
+      - type: icon
+        value: weather-cloudy
+        x: 120
+        y: 0
+        size: 60
+        color: black
+      - type: text
+        value: '{{ now().hour }}:{{now().minute }}'
+        x: 200
+        y: 25
+        size: 20
+        color: black
+      - type: icon
+        value: battery-charging
+        x: 252
+        y: 5
+        size: 18
+        color: black
+      - type: text
+        value: '{{ states(''sensor.0000021f476a3b1a_battery'') }}%'
+        x: 265
+        y: 10
+        size: 13
+        color: black
+      - type: text
+        value: '{{ state_attr("weather.forecast_home", "temperature") }}°C'
+        x: 10
+        y: 60
+        size: 28
+        color: black
+  mode: single
+- id: '1702558895208'
+  alias: LusterRemote turns on luster
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: 'on'
+    discovery_id: 0xf082c0fffe212293 action_on
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 80
+    target:
+      device_id: b6ec01b39eb6cd1cf1de879cd89e97cb
+  mode: single
+- id: '1702558926105'
+  alias: LusterRemote turns off luster
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: 'off'
+    discovery_id: 0xf082c0fffe212293 action_off
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data:
+      transition: 1
+    target:
+      device_id: b6ec01b39eb6cd1cf1de879cd89e97cb
+  mode: single
+- id: '1702558974327'
+  alias: LusterRemote increase brightness of luster
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: brightness_move_up
+    discovery_id: 0xf082c0fffe212293 action_brightness_move_up
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: b6ec01b39eb6cd1cf1de879cd89e97cb
+    domain: light
+    entity_id: 5494955b791c0aed53e369ec9a89f465
+    type: brightness_increase
+  mode: single
+- id: '1702559548263'
+  alias: LusterRemote decrease brightness on luster
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: brightness_move_down
+    discovery_id: 0xf082c0fffe212293 action_brightness_move_down
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: b6ec01b39eb6cd1cf1de879cd89e97cb
+    domain: light
+    entity_id: 5494955b791c0aed53e369ec9a89f465
+    type: brightness_decrease
+  mode: single
+- id: '1707339747787'
+  alias: Notify on Prowlarr event
+  description: ''
+  trigger:
+  - platform: webhook
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+    webhook_id: prowlarr-ZiSTvQknfAV0phBQLDG_yv-e
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: '{{trigger.json.message}}'
+  mode: single
+- id: '1710065513244'
+  alias: 'Notify on motion Kinderzimmer '
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 1b4b33e8f2923af2fd0568149ab1367b
+    entity_id: 5d6d72f0c9951f77228bf48c93d60f59
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_2_xl
+    metadata: {}
+    data:
+      message: 'Bewegung Kinderzimmer '
+  mode: single
+- id: '1727465070267'
+  alias: Toggle Tapocam2 Privacy when Tag is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 2a45da20-6ece-4070-a3bb-f3f415871f63
+  condition: []
+  action:
+  - type: toggle
+    device_id: 23b9db06384795e2f45714e8e2d1d1a9
+    entity_id: 9da8720c68a631ca21b92ef924ee8f99
+    domain: switch
+  mode: single
+- id: '1732309616168'
+  alias: Notify on low battery
+  description: ''
+  use_blueprint:
+    path: gmlupatelli/low_battery_notification.yaml
+    input:
+      threshold: 15
+      actions:
+      - action: notify.notify
+        metadata: {}
+        data:
+          message: 'Niedriger Batteriestatus: {{sensors}}'
+      monday_enabled: false
+      tuesday_enabled: false
+      wednesday_enabled: false
+      thursday_enabled: false
+      saturday_enabled: false
+      sunday_enabled: false
+- id: '1734791275005'
+  alias: notify on duin docker image updates
+  description: ''
+  triggers:
+  - trigger: webhook
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+    webhook_id: -nHla-NVIlhzl5OWqyUIn4KZg
+  conditions: []
+  actions:
+  - action: notify.mobile_app_pixel_2_xl
+    metadata: {}
+    data:
+      title: duin
+      message: 'update: {{trigger.json.image}}'
+  mode: single
+- id: '1736077245923'
+  alias: On Lusterremote left toggle Stehlampe
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: arrow_left_click
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data: {}
+    target:
+      device_id: 1e4b60a37e3e7c49cb447624e0ed5d46
+  mode: single
+- id: '1736077314759'
+  alias: On Lusterremote right toggle tradfri Lampe 2
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: c719b2e942d17d145cab874f36fc7eff
+    type: action
+    subtype: arrow_right_click
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data: {}
+    target:
+      device_id: 5e3a781475512d2c917c2f588c7b0e25
+  mode: single
+- id: '1736180264234'
+  alias: Notify on failed dockerpi backup
+  description: ''
+  triggers:
+  - trigger: webhook
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+    webhook_id: -OAQsbYonSwrvCJayPdv4jSs8
+  conditions: []
+  actions:
+  - action: notify.mobile_app_pixel_2_xl
+    metadata: {}
+    data:
+      message: Dockerpi Backup failed
+  mode: single
