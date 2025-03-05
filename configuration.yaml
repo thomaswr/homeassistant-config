@@ -79,6 +79,7 @@ recorder:
       - person.*
       - sensor.tasmota_energy*
       - sensor.fernsehlicht*
+      - sensor.0xa4c138*
 
 # View all events in a logbook
 logbook:
