@@ -144,11 +144,6 @@ influxdb:
     sensor.*battery_level:
       override_measurement: battery_level
 
-light:
-  - platform: switch
-    name: Stehlampe
-    entity_id: switch.tplinkkasa1
-
 device_tracker:
   - platform: ddwrt
     host: !secret ddwrt_host
