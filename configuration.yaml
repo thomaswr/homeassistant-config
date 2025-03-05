@@ -77,6 +77,8 @@ recorder:
       - sensor.0x00158d00*_humidity
       - sensor.speedtest*
       - person.*
+      - sensor.tasmota_energy*
+      - sensor.fernsehlicht*
 
 # View all events in a logbook
 logbook:
