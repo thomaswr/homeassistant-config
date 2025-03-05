@@ -1,0 +1,562 @@
+- id: '1613165398637'
+  name: Office TV Mode
+  entities:
+    light.0x00178801091b530c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.509
+        y: 0.451
+      linkquality: 225
+      power_on_behavior: previous
+      update:
+        installed_version: 1.101.2
+        state: idle
+      update_available: false
+      friendly_name: TV Licht 1
+      supported_features: 44
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 44.793
+      - 85.098
+      rgb_color:
+      - 255
+      - 200
+      - 38
+      xy_color:
+      - 0.509
+      - 0.451
+      state: 'on'
+    light.0x0017880106d6129d:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.612
+        y: 0.374
+      linkquality: 229
+      power_on_behavior:
+      update:
+        installed_version: 1.101.2
+        state:
+      update_available:
+      friendly_name: TV Licht 2
+      supported_features: 44
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 30.119
+      - 99.216
+      rgb_color:
+      - 255
+      - 129
+      - 2
+      xy_color:
+      - 0.612
+      - 0.374
+      state: 'on'
+    light.0x00178801027b318c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Schlafzimmerlicht
+      supported_features: 44
+      linkquality: 142
+      update:
+        installed_version: 1.101.2
+        state:
+      state: 'off'
+  metadata: {}
+- id: '1613167971456'
+  name: Office Default
+  entities:
+    light.0x00178801091b530c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.509
+        y: 0.451
+      linkquality: 225
+      power_on_behavior: previous
+      update:
+        installed_version: 1.101.2
+        state: idle
+      update_available: false
+      friendly_name: TV Licht 1
+      supported_features: 44
+      state: 'off'
+    light.0x0017880106d6129d:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.612
+        y: 0.374
+      linkquality: 229
+      power_on_behavior:
+      update:
+        installed_version: 1.101.2
+        state:
+      update_available:
+      friendly_name: TV Licht 2
+      supported_features: 44
+      state: 'off'
+    light.0x00178801027b318c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Schlafzimmerlicht
+      supported_features: 44
+      linkquality: 142
+      update:
+        installed_version: 1.101.2
+        state:
+      color_mode: unknown
+      state: 'on'
+  metadata: {}
+- id: '1613304771022'
+  name: Office Off
+  entities:
+    light.0x00178801091b530c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.509
+        y: 0.451
+      linkquality: 225
+      power_on_behavior: previous
+      update:
+        installed_version: 1.101.2
+        state: idle
+      update_available: false
+      friendly_name: TV Licht 1
+      supported_features: 44
+      state: 'off'
+    light.0x0017880106d6129d:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      color:
+        x: 0.612
+        y: 0.374
+      linkquality: 233
+      power_on_behavior:
+      update:
+        installed_version: 1.101.2
+        state:
+      update_available:
+      friendly_name: TV Licht 2
+      supported_features: 44
+      state: 'off'
+    light.0x00178801027b318c:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Schlafzimmerlicht
+      supported_features: 44
+      linkquality: 142
+      update:
+        installed_version: 1.101.2
+        state:
+      power_on_behavior: previous
+      state: 'off'
+    light.0x00158d00017d9393:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Regallicht
+      supported_features: 44
+      linkquality: 102
+      state: 'off'
+    light.0xd0cf5efffeba7818:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      linkquality: 102
+      power_on_behavior:
+      update:
+        installed_version: 2.3.095
+        state: idle
+      update_available: false
+      friendly_name: Schreibtischlampe
+      supported_features: 44
+      state: 'off'
+  metadata: {}
+- id: '1613913113937'
+  name: Livingroom Default
+  entities:
+    light.0x980c33fffee2512d:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: '0x980c33fffee2512d'
+      supported_features: 44
+      linkquality: 91
+      update:
+        installed_version: 33816581
+        latest_version: 50331664
+        state: available
+      color_mode: color_temp
+      brightness: 255
+      update_available: true
+      color_temp_kelvin: 3401
+      color_temp: 294
+      hs_color:
+      - 27.277
+      - 46.969
+      rgb_color:
+      - 255
+      - 189
+      - 135
+      xy_color:
+      - 0.462
+      - 0.375
+      state: 'on'
+    light.0x8c6fb9fffed0a2ea:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3401
+      color_temp: 294
+      hs_color:
+      - 27.277
+      - 46.969
+      rgb_color:
+      - 255
+      - 189
+      - 135
+      xy_color:
+      - 0.462
+      - 0.375
+      effect:
+      color_options:
+      linkquality: 98
+      power_on_behavior: 'off'
+      update:
+        installed_version: 50331664
+        latest_version: 50331664
+        state: idle
+      update_available: false
+      friendly_name: Tradfri Lampe 2
+      supported_features: 44
+      state: 'on'
+  metadata: {}
+- id: '1613913141541'
+  name: Livingroom Off
+  entities:
+    light.0x980c33fffee2512d:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: '0x980c33fffee2512d'
+      supported_features: 44
+      linkquality: 94
+      update:
+        installed_version: 33816581
+        latest_version: 50331664
+        state: available
+      color_mode:
+      brightness:
+      update_available: true
+      state: 'off'
+    light.0x8c6fb9fffed0a2ea:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      effect:
+      color_options:
+      linkquality: 116
+      power_on_behavior: 'off'
+      update:
+        installed_version: 50331664
+        latest_version: 50331664
+        state: idle
+      update_available: false
+      friendly_name: Tradfri Lampe 2
+      supported_features: 44
+      state: 'off'
+  metadata: {}
+- id: '1704012907948'
+  name: Wohnzimmer gemütlich
+  entities:
+    light.0x8c6fb9fffed0a2ea:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 166
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      effect:
+      color_options:
+      linkquality: 123
+      power_on_behavior: 'off'
+      update:
+        installed_version: 50331664
+        latest_version: 50331664
+        state: idle
+      update_available: false
+      friendly_name: Tradfri Lampe 2
+      supported_features: 44
+      state: 'on'
+    light.luster:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 176
+      color_temp_kelvin: 2801
+      color_temp: 357
+      hs_color:
+      - 28.185
+      - 62.588
+      rgb_color:
+      - 255
+      - 170
+      - 95
+      xy_color:
+      - 0.516
+      - 0.386
+      effect:
+      friendly_name: Luster
+      supported_features: 44
+      state: 'on'
+    light.0x980c33fffee2512d:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 176
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      effect:
+      color_options:
+      linkquality: 76
+      power_on_behavior:
+      update:
+        installed_version: 50331664
+        latest_version: 50331664
+        state: idle
+      update_available: false
+      friendly_name: Stehlampe
+      supported_features: 44
+      state: 'on'
+  metadata: {}
