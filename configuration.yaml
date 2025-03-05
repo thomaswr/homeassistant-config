@@ -61,9 +61,9 @@ energy:
 
 # Enables support for tracking state changes over time.
 history:
-    exclude:
-      domains:
-        - proximity
+  exclude:
+    domains:
+      - proximity
 
 recorder:
   db_url: !secret db_url
@@ -88,11 +88,15 @@ logbook:
       - sensor.pitemperature
       - sensor.disk_use_home
       - sensor.cpu_use
-      - sensor.ram_free 
+      - sensor.ram_free
       - sensor.last_boot
 
 # Track the sun
 sun:
+
+stream:
+
+go2rtc:
 
 # Text to speech
 tts:
