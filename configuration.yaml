@@ -96,8 +96,6 @@ sun:
 
 stream:
 
-go2rtc:
-
 # Text to speech
 tts:
   platform: google_translate
