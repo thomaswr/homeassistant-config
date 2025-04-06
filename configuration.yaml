@@ -155,6 +155,83 @@ device_tracker:
     password: !secret ddwrt_password
     wireless_only: false
 
+mqtt:
+  sensor:
+    - name: "Gas Zählerstand"
+      unique_id: sensor.gaszaehler_zaehlerstand
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.gastotal }}'
+      unit_of_measurement: 'm³'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: gas
+      state_class: "total_increasing"
+    - name: "Gas Zählung seit Nullung"
+      unique_id: sensor.gaszaehler_zaehlung_seit_nullung 
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.value }}'
+      unit_of_measurement: 'm³'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: gas
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Volumen heute"
+      unique_id: sensor.gaszaehler_verbrauch_volumen_heute
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.today_m3 }}'
+      unit_of_measurement: 'm³'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: gas
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Energie heute"
+      unique_id: sensor.gaszaehler_verbrauch_energie_heute
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.today_kwh }}'
+      unit_of_measurement: 'kWh'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: energy
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Volumen gestern"
+      unique_id: sensor.gaszaehler_verbrauch_volumen_gestern
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.yesterday_m3 }}'
+      unit_of_measurement: 'm³'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: gas
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Energie gestern"
+      unique_id: sensor.gaszaehler_verbrauch_energie_gestern
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.yesterday_kwh }}'
+      unit_of_measurement: 'kWh'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: energy
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Volumen vorgestern"
+      unique_id: sensor.gaszaehler_verbrauch_volumen_vorgestern
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.db_yesterday_m3 }}'
+      unit_of_measurement: 'm³'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: gas
+      state_class: "total_increasing"
+    - name: "Gas Verbrauch Energie vorgestern"
+      unique_id: sensor.gaszaehler_verbrauch_energie_vorgestern
+      state_topic: "tele/Gaszaehler/json"
+      value_template: '{{ value_json.db_yesterday_kwh }}'
+      unit_of_measurement: 'kWh'
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: energy
+      state_class: "total_increasing"
+
+
+
 input_number:
 counter:
 input_datetime:
