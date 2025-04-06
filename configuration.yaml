@@ -80,6 +80,11 @@ recorder:
       - sensor.tasmota_energy*
       - sensor.fernsehlicht*
       - sensor.0xa4c138*
+      - sensor.shrdzm_08f9e060c91d_1_7_0
+      - sensor.shrdzm_08f9e060c91d_2_7_0
+      - sensor.energy_spent
+      - sensor.energy_spent_cost
+      - sensor.electricity_maps*
 
 # View all events in a logbook
 logbook:
