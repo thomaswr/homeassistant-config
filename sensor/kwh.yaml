@@ -1,0 +1,7 @@
+- platform: integration
+  source: sensor.shrdzm_08f9e060c91d_1_7_0
+  name: energy_spent
+  unit_prefix: k
+  round: 3
+  max_sub_interval:
+    minutes: 5
