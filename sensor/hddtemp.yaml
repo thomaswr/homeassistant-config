@@ -1,8 +1,0 @@
-- platform: hddtemp
-  name: Server
-  host: 10.70.0.10
-  disks:
-    - /dev/sdb
-    - /dev/sdc
-    - /dev/sdd
-    - /dev/sde
