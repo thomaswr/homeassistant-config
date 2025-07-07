@@ -1,0 +1,13 @@
+'1592398472440':
+  alias: Play Klassik Radio
+  sequence:
+  - data:
+      entity_id: media_player.googlehome8436
+      media_content_id: http://htpc:9981/stream/channelname/Klassik%20Radio?profile=chromecast
+      media_content_type: audio/aac
+    entity_id: media_player.googlehome8436
+    service: media_player.play_media
+  - delay: '00:00:01'
+  - data: {}
+    entity_id: media_player.googlehome8436
+    service: media_player.media_play
