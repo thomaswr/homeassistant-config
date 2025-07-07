@@ -23,3 +23,15 @@ OZW_Log.txt
 .storage
 custom_components
 www
+image/*
+*.log.*
+zigbee2mqtt/*
+.jwt_secret
+.timeline
+.vacuum
+*.db
+html5_push_registrations.conf
+ip_bans.yaml
+webostv.conf
+.exports
+.ps4*
